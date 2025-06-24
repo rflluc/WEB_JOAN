@@ -1,6 +1,52 @@
 [InternetShortcut]
-URL=https://www.pmonzon.com/
+URL=https://www.pmongzon.com/
 IDList=
 HotKey=0
 IconFile=C:\Users\llucr\AppData\Local\Mozilla\Firefox\Profiles\976zulaw.default-release\shortcutCache\obHJlAMaUALI+_5ihjTnMd12deYgTjY06eV15oCCjR4=.ico
 IconIndex=0
+
+
+
+rflluc
+i como trabajo desde otro pc i que se vayan guardando los cambios?
+
+GitHub Copilot
+Para trabajar desde otro PC y que los cambios se guarden en GitHub, sigue estos pasos:
+
+1. En el otro PC, abre una terminal y clona tu repositorio: 
+git clone https://github.com/rflluc/WEB_JOAN.git
+
+2. Entra en la carpeta del proyecto:
+cd WEB_JOAN
+
+3. Haz tus cambios en los archivos.
+4. Guarda y sube los cambios a GitHub:
+git add .
+git commit -m "Descripción de los cambios"
+git push (enviar a Github)
+
+5. Cuando vuelvas al primer PC, antes de trabajar, ejecuta:
+git pull (descarga de GitHub al meu pc)
+Así tendrás siempre la última versión y tus cambios estarán sincronizados entre ambos ordenadores usando GitHub.
+
+******** PER TREBALLAR A PARTIR D'UNA RAMA EN CONCRET ****************
+
+Si hay diferentes ramas y quieres continuar el proyecto desde una rama concreta, debes cambiarte a esa rama antes de trabajar.
+
+1. Ver las ramas disponibles:
+git branch -a
+
+2. Cambiarte a la rama que quieres usar (por ejemplo, develop):
+git checkout develop
+
+3. Si la rama solo existe en remoto (GitHub), primero descárgala:
+git fetch
+git checkout nombre-de-la-rama
+
+4. Ahora ya puedes trabajar en esa rama.
+Cuando termines y quieras guardar los cambios:
+git add .
+git commit -m "Descripción de los cambios"
+git push
+
+Así trabajarás siempre sobre la rama que elijas.

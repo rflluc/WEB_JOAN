@@ -1,6 +1,6 @@
 * {
     /* border: 1px solid red; */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -8,52 +8,207 @@
 /******  Capçalera ******/
 .divHeader {
     width: 100%;
-    height: 11rem;
-
 }
 
-.divLogoMenuXarxes {
+/*****/
+.tel_correu_xarxes {
     display: flex;
-    background: black;
-
-    /* background-image: url('../img/capçalera.jpg'); */
-    /* background-size: cover; */
+    justify-content: center;
+    background-color: #F9F9F9;
 }
 
+.telCorreu {
+    display: flex;
+    height: 3rem;
+    width: 30%;
+    gap: 2rem;
+}
 
-.divLogoMenuXarxes img {
-    height: 10rem;
+.xarxes {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3rem;
+    width: 30%;
+    gap: 2rem;
+    color: #8C8C8C;
+    font-size: 1.5rem;
+}
+
+/*****/
+.divLogoMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    /* background-color: red; */
+}
+
+.divLogo img {
+    height: 5rem;
     width: 10rem;
-    padding: 1rem;
 }
-
-.divLogoMenuXarxes nav {
-    display: flex;
-    gap: 10rem;
-}
-
 
 .divMenu {
-    width: 100rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 70rem;
 }
 
 .divMenu a {
+    color: black;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.divMenu nav {
+    display: flex;
+    gap: 3rem;
+}
+
+
+/********** submenu ********/
+.divSlogan img {
+    width: 100%;
+    height: 30rem;
+    filter: brightness(0.5);
+}
+
+.text-sobre-imatge_1 {
+    position: absolute;
+    top: 23%;
+    left: 20%;
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.text-sobre-imatge_2 {
+    position: absolute;
+    top: 38%;
+    left: 30%;
     color: white;
     font-size: 2rem;
-    
+
+}
+
+.demana_pressupost button {
+    position: absolute;
+    top: 49%;
+    left: 38%;
+    background-color: #F37447;
+    border-radius: 1rem;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1rem;
 }
 
 
-.divXarxes {
-    /* height: 8rem; */
-    width: auto;
-    font-size: 3rem;
-    /* background: red; */
+/************promocio************/
+
+.promocio {
+    height: 30rem;
+    width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    text-align: center;
+    gap: 5rem;
+    background-color: #F9F9F9;
+}
+
+.promocio i {
+    font-size: 5rem;
+    margin: 2rem 0 0 0;
+}
+
+.promocio h4 {
+    font-size: 1.82rem;
 
 }
+
+.promocio p {
+    font-size: 1.5rem;
+}
+
+
+.experiencia {
+    height: 25rem;
+    width: 27rem;
+    border-radius: 2rem;
+    border: 0.1rem solid black;
+    /* background-color: yellow; */
+    /* width: 100%; */
+}
+
+.qualitat {
+    height: 25rem;
+    width: 27rem;
+    border-radius: 2rem;
+    border: 0.1rem solid black;
+    /* background-color: brown; */
+    /* width: 100%; */
+}
+
+.pressupost {
+    height: 25rem;
+    width: 27rem;
+    border-radius: 2rem;
+    border: 0.1rem solid black;
+    /* background-color: blue; */
+    /* width: 100%; */
+}
+
+
+/********** Serveis *************/
+
+.divServeis {
+    background-color: red;
+   display: flex;
+
+}
+
+.reformes{
+    background-color: green;
+    height: 35rem;
+    width: 50rem;
+}
+
+.restauracions{
+    background-color:yellow;
+    height: 35rem;
+    width: 50rem;
+}
+.rehabilitacions{
+    background-color:blue;
+    height: 35rem;
+    width: 50rem;
+}
+
+
+/******sobre nosaltres******************/
+.divEmpresa {
+    display: flex;
+    height: 43rem;
+    /* background-color: red; */
+    /* justify-content: center; */
+}
+
+.divEmpresa p {
+    font-size: 1.5rem;
+    /* background-color: green; */
+    width: 45%;
+    margin: 1rem 5rem 2rem 2rem;
+}
+
+.divEmpresa img {
+    border-radius: 2rem;
+    height: 30rem;
+    width: 45rem;
+    margin: 5rem 5rem 3rem 5rem;
+}
+
+/************************/
