@@ -72,7 +72,7 @@
 /********** submenu ********/
 .divSlogan img {
     width: 100%;
-    height: 30rem;
+    height: 35rem;
     filter: brightness(0.5);
 }
 
@@ -110,7 +110,7 @@
 /************promocio************/
 
 .promocio {
-    height: 30rem;
+    height: 35rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -165,27 +165,56 @@
 
 /********** Serveis *************/
 
-.divServeis {
-    background-color: red;
-   display: flex;
-
+.divServeis img {
+    height: 15rem;
+    width: 100%;
 }
 
-.reformes{
+.serveis_1 {
+    display: flex;
+    gap: 2rem;
+    background-color: red;
+}
+
+.obres {
     background-color: green;
     height: 35rem;
-    width: 50rem;
+    width: 35rem;
 }
 
-.restauracions{
-    background-color:yellow;
+.reformes {
+    background-color: grey;
     height: 35rem;
-    width: 50rem;
+    width: 35rem;
 }
-.rehabilitacions{
-    background-color:blue;
+
+.restauracions_rehabilitacions {
+    background-color: yellow;
     height: 35rem;
-    width: 50rem;
+    width: 35rem;
+}
+
+.serveis_2 {
+    display: flex;
+    gap: 2rem;
+}
+
+.micropigmentacio {
+    background-color: blue;
+    height: 35rem;
+    width: 35rem;
+}
+
+.lloguerMaquinaria {
+    background-color: pink;
+    height: 35rem;
+    width: 35rem;
+}
+
+.projectesMida {
+    background-color: pink;
+    height: 35rem;
+    width: 35rem;
 }
 
 
@@ -193,8 +222,6 @@
 .divEmpresa {
     display: flex;
     height: 43rem;
-    /* background-color: red; */
-    /* justify-content: center; */
 }
 
 .divEmpresa p {
@@ -206,7 +233,7 @@
 
 .divEmpresa img {
     border-radius: 2rem;
-    height: 30rem;
+    height: 35rem;
     width: 45rem;
     margin: 5rem 5rem 3rem 5rem;
 }
