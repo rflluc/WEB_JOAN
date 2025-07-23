@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     background-color: #F9F9F9;
+    padding: 0 1rem;
 }
 
 .telCorreu {
@@ -22,6 +23,8 @@
     height: 3rem;
     width: 30%;
     gap: 2rem;
+    align-items: center;
+    font-size: 0.9rem;
 }
 
 .xarxes {
@@ -38,9 +41,10 @@
 /*****/
 .divLogoMenu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 8rem;
+    padding: 0 2rem;
 }
 
 .divLogo img {
@@ -52,14 +56,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70rem;
 }
 
 .divMenu a {
     color: black;
     font-size: 1.2rem;
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
 
+.divMenu a:hover {
+    background-color: #f0f0f0;
 }
 
 .divMenu nav {
@@ -67,18 +76,173 @@
     gap: 3rem;
 }
 
+/* Botón hamburguesa (oculto por defecto) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Media Queries para Responsive */
+
+/* Tablets (hasta 1024px) */
+@media screen and (max-width: 1024px) {
+    .tel_correu_xarxes {
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+    
+    .telCorreu {
+        width: auto;
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .xarxes {
+        width: auto;
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .divLogoMenu {
+        padding: 0 1rem;
+    }
+    
+    .divLogo img {
+        height: 5rem;
+        width: 10rem;
+    }
+    
+    .divMenu nav {
+        gap: 2rem;
+    }
+    
+    .divMenu a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móviles grandes (hasta 768px) */
+@media screen and (max-width: 768px) {
+    .tel_correu_xarxes {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .telCorreu {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.7rem;
+        height: 2rem;
+    }
+    
+    .xarxes {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+        font-size: 1.1rem;
+        height: 2rem;
+    }
+    
+    .divLogoMenu {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .divLogo img {
+        height: 4rem;
+        width: 8rem;
+    }
+    
+    .divMenu {
+        width: 100%;
+    }
+    
+    .divMenu nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .divMenu a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media screen and (max-width: 480px) {
+    .tel_correu_xarxes {
+        padding: 0.5rem;
+    }
+    
+    .telCorreu {
+        flex-direction: column;
+        gap: 0.3rem;
+        font-size: 0.6rem;
+        text-align: center;
+    }
+    
+    .xarxes {
+        gap: 1rem;
+        font-size: 1rem;
+    }
+    
+    .divLogo img {
+        height: 3.5rem;
+        width: 7rem;
+    }
+    
+    .divMenu nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .divMenu a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Ocultar algunos elementos en móviles muy pequeños si es necesario */
+    .telCorreu p {
+        margin: 0;
+    }
+}
+
 
 /********** submenu ********/
+.divSlogan {
+    position: relative;
+}
+
 .divSlogan img {
     width: 100%;
     height: 32rem;
     filter: brightness(0.7);
+    object-fit: cover;
 }
 
 .text-sobre-imatge_1 {
     position: absolute;
     top: 30%;
-    left:16%;
+    left: 16%;
     color: white;
     font-size: 4rem;
     font-weight: bold;
@@ -91,7 +255,6 @@
     color: white;
     font-size: 2.5rem;
     /* font-weight: 200; */
-
 }
 
 .demana_pressupost button {
@@ -104,23 +267,32 @@
     font-size: 1rem;
     font-weight: bold;
     padding: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.demana_pressupost button:hover {
+    background-color: #d4622a;
+}
 
 /************promocio************/
 .promocio {
-    height: 30rem;
+    height: auto;
+    min-height: 30rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
-    /* background-color: green; */
+    background-color: #F8F9F9;
+    padding: 2rem;
 }
 
 .promocio img {
     height: 15rem;
     width: 100%;
+    object-fit: cover;
 }
 
 .promocio p {
@@ -128,119 +300,135 @@
     font-size: 1rem;
     font-weight: 400;
     margin: 0 1rem 0 1rem;
+    text-align: center;
 }
 
 .promocio h3 {
     margin: 1rem;
+    text-align: center;
 }
 
-.experiencia {
-    height: 24rem;
-    width: 24rem;
-  
-    /* border: 0.1rem solid black; */
+.experiencia, .qualitat, .pressupost {
+    height: 25rem;
+    width: 25rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px #757373;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 }
-
-
-.qualitat {
-    height: 24rem;
-    width: 24rem;
-    /* border: 0.1rem solid black; */
-
-}
-
-.pressupost {
-    height: 24rem;
-    width: 24rem;
-    /* border: 0.1rem solid black; */
-}
-
 
 /********** Serveis *************/
-
 .titolServeis {
-    margin-left: 18rem;
+    text-align: center;
+    margin: 2rem 0;
 }
 
 .divServeis {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servei-item {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servei-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .divServeis img {
     height: 16rem;
-    width: 90%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
-.serveis_1 {
-    width: 20%;
+.servei-item h3 {
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+    font-size: 1.3rem;
 }
 
-.obres {
-    /* background-color: green; */
-
+.servei-item p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #666;
+    font-size: 0.95rem;
 }
 
-.reformes {
-    /* background-color: grey; */
-
+/* Mantener compatibilidad con estructura anterior */
+.serveis_1, .serveis_2 {
+    display: contents;
 }
 
-.restauracions_rehabilitacions {
-    /* background-color: yellow; */
-
+.obres, .reformes, .restauracions_rehabilitacions,
+.microciment, .lloguerMaquinaria, .projectesMida {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.imatgeServeis{
-    height: 75rem;
-    /* background-color: red ; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.imatgeServeis img {
-    height: 60rem;
-    width: 30rem;
-    border-radius: 5rem;
+.obres:hover, .reformes:hover, .restauracions_rehabilitacions:hover,
+.microciment:hover, .lloguerMaquinaria:hover, .projectesMida:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-
-
-.serveis_2 {
-    width: 20%;
+.serveis_1 img, .serveis_2 img {
+    height: 16rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
-.microciment {
-    /* background-color: blue; */
-
+.serveis_1 h3, .serveis_2 h3 {
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+    font-size: 1.3rem;
 }
 
-.lloguerMaquinaria {
-    /* background-color: pink; */
-
+.serveis_1 p, .serveis_2 p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #666;
+    font-size: 0.95rem;
 }
-
-.projectesMida {
-    /* background-color: pink; */
-
-}
-
 
 /******sobre nosaltres******************/
 .divEmpresa {
     display: flex;
-    height: 43rem;
+    height: auto;
+    min-height: 43rem;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
 }
 
 .divEmpresa p {
     font-size: 1.5rem;
-    /* background-color: green; */
     width: 45%;
     margin: 1rem 5rem 2rem 2rem;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 .divEmpresa img {
@@ -248,6 +436,344 @@
     height: 35rem;
     width: 45rem;
     margin: 5rem 5rem 3rem 5rem;
+    object-fit: cover;
+}
+
+/* Galería de imágenes */
+.divImatges {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.divImatges h1 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Contacto */
+.divContacte {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.divContacte h1 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Footer */
+.generalFooter {
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.generalFooter h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Media Queries para secciones adicionales */
+
+/* Tablets (hasta 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Hero/Slogan */
+    .text-sobre-imatge_1 {
+        font-size: 3rem;
+        left: 10%;
+    }
+    
+    .text-sobre-imatge_2 {
+        font-size: 2rem;
+        left: 10%;
+    }
+    
+    .demana_pressupost button {
+        left: 10%;
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+    
+    /* Promoción */
+    .promocio {
+        gap: 3rem;
+        padding: 1.5rem;
+    }
+    
+    .experiencia, .qualitat, .pressupost {
+        height: 22rem;
+        width: 22rem;
+    }
+    
+    /* Servicios */
+    .divServeis {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 1.5rem;
+    }
+    
+    .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
+    .microciment, .lloguerMaquinaria, .projectesMida {
+        padding: 1.2rem;
+    }
+    
+    .divServeis img, .serveis_1 img, .serveis_2 img {
+        height: 14rem;
+    }
+    
+    .servei-item h3, .serveis_1 h3, .serveis_2 h3 {
+        font-size: 1.2rem;
+    }
+    
+    .servei-item p, .serveis_1 p, .serveis_2 p {
+        font-size: 0.9rem;
+    }
+    
+    /* Sobre nosotros */
+    .divEmpresa p {
+        font-size: 1.3rem;
+        margin: 1rem 3rem 1rem 1rem;
+    }
+    
+    .divEmpresa img {
+        height: 30rem;
+        width: 35rem;
+        margin: 3rem;
+    }
+    
+    /* Galería, Contacto, Footer */
+    .divImatges, .divContacte {
+        padding: 2rem 1rem;
+    }
+    
+    .generalFooter {
+        padding: 1.5rem;
+    }
+}
+
+/* Móviles grandes (hasta 768px) */
+@media screen and (max-width: 768px) {
+    /* Hero/Slogan */
+    .divSlogan img {
+        height: 20rem;
+    }
+    
+    .text-sobre-imatge_1 {
+        font-size: 2rem;
+        left: 5%;
+        top: 25%;
+    }
+    
+    .text-sobre-imatge_2 {
+        font-size: 1.2rem;
+        left: 5%;
+        top: 40%;
+    }
+    
+    .demana_pressupost button {
+        left: 5%;
+        top: 55%;
+        font-size: 0.8rem;
+        padding: 0.7rem;
+    }
+    
+    /* Promoción */
+    .promocio {
+        flex-direction: column;
+        gap: 2rem;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+    
+    .experiencia, .qualitat, .pressupost {
+        height: auto;
+        width: 90%;
+        max-width: 300px;
+        padding: 1.5rem;
+    }
+    
+    .promocio img {
+        height: 12rem;
+    }
+    
+    /* Servicios */
+    .divServeis {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
+    .microciment, .lloguerMaquinaria, .projectesMida {
+        padding: 1rem;
+    }
+    
+    .divServeis img, .serveis_1 img, .serveis_2 img {
+        height: 12rem;
+    }
+    
+    .servei-item h3, .serveis_1 h3, .serveis_2 h3 {
+        font-size: 1.1rem;
+    }
+    
+    .servei-item p, .serveis_1 p, .serveis_2 p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Sobre nosotros */
+    .divEmpresa {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .divEmpresa p {
+        width: 100%;
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+    
+    .divEmpresa img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin: 1rem 0;
+    }
+    
+    /* Galería, Contacto, Footer */
+    .divImatges, .divContacte {
+        padding: 2rem 1rem;
+    }
+    
+    .divImatges h1, .divContacte h1 {
+        font-size: 1.8rem;
+    }
+    
+    .generalFooter {
+        padding: 1.5rem 1rem;
+    }
+    
+    .generalFooter h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media screen and (max-width: 480px) {
+    /* Hero/Slogan */
+    .divSlogan img {
+        height: 15rem;
+    }
+    
+    .text-sobre-imatge_1 {
+        font-size: 1.5rem;
+        left: 3%;
+        top: 20%;
+    }
+    
+    .text-sobre-imatge_2 {
+        font-size: 1rem;
+        left: 3%;
+        top: 35%;
+        right: 3%;
+    }
+    
+    .demana_pressupost button {
+        left: 3%;
+        top: 60%;
+        font-size: 0.7rem;
+        padding: 0.6rem;
+    }
+    
+    /* Promoción */
+    .promocio {
+        padding: 1rem 0.5rem;
+        gap: 1.5rem;
+    }
+    
+    .experiencia, .qualitat, .pressupost {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .promocio img {
+        height: 10rem;
+    }
+    
+    .promocio h3 {
+        font-size: 1.1rem;
+        margin: 0.5rem;
+    }
+    
+    .promocio p {
+        font-size: 0.9rem;
+        margin: 0 0.5rem;
+    }
+    
+    /* Servicios */
+    .titolServeis {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
+    }
+    
+    .divServeis {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
+    .microciment, .lloguerMaquinaria, .projectesMida {
+        padding: 0.8rem;
+    }
+    
+    .divServeis img, .serveis_1 img, .serveis_2 img {
+        height: 10rem;
+    }
+    
+    .servei-item h3, .serveis_1 h3, .serveis_2 h3 {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .servei-item p, .serveis_1 p, .serveis_2 p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    /* Sobre nosotros */
+    .divEmpresa p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .divEmpresa img {
+        max-width: 300px;
+    }
+    
+    /* Galería, Contacto, Footer */
+    .divImatges, .divContacte {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .divImatges h1, .divContacte h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .generalFooter {
+        padding: 1rem 0.5rem;
+    }
+    
+    .generalFooter h1 {
+        font-size: 1.1rem;
+    }
 }
 
 /************************/
