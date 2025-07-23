@@ -100,6 +100,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .divMenu a {
@@ -115,7 +116,7 @@ body {
     background-color: #f0f0f0;
 }
 
-.divMenu nav {
+.nav-menu {
     display: flex;
     gap: 3rem;
 }
@@ -126,6 +127,7 @@ body {
     flex-direction: column;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 1001;
 }
 
 .menu-toggle span {
@@ -134,6 +136,20 @@ body {
     background-color: #333;
     margin: 3px 0;
     transition: 0.3s;
+    transform-origin: center;
+}
+
+/* Animación del botón hamburguesa cuando está activo */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Media Queries para Responsive */
@@ -201,10 +217,10 @@ body {
     }
     
     .divLogoMenu {
-        flex-direction: column;
         height: auto;
         padding: 1rem;
         gap: 1rem;
+        justify-content: space-between;
     }
     
     .divLogo img {
@@ -213,18 +229,49 @@ body {
     }
     
     .divMenu {
-        width: 100%;
+        width: auto;
     }
     
-    .divMenu nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+    /* Mostrar botón hamburguesa en móviles */
+    .menu-toggle {
+        display: flex;
     }
     
-    .divMenu a {
-        font-size: 1rem;
-        padding: 0.5rem;
+    /* Ocultar menú por defecto en móviles */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 5rem;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    /* Menú móvil abierto */
+    .nav-menu.mobile-open {
+        right: 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 1rem;
+        width: 80%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .nav-menu a:hover {
+        background-color: #F37447;
+        color: white;
     }
 }
 
@@ -246,22 +293,31 @@ body {
         font-size: 1rem;
     }
     
+    .divLogoMenu {
+        padding: 0.5rem 1rem;
+        justify-content: space-between;
+    }
+    
     .divLogo img {
         height: 3.5rem;
         width: 7rem;
     }
     
-    .divMenu nav {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+    /* Menú hamburguesa para móviles pequeños */
+    .menu-toggle {
+        display: flex;
     }
     
-    .divMenu a {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        display: block;
-        width: 100%;
+    .nav-menu {
+        width: 200px;
+        padding-top: 4rem;
+        gap: 1.5rem;
+    }
+    
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0.8rem;
+        width: 90%;
     }
     
     /* Ocultar algunos elementos en móviles muy pequeños si es necesario */
@@ -459,28 +515,208 @@ body {
 
 /******sobre nosaltres******************/
 .divEmpresa {
-    display: flex;
-    height: auto;
-    min-height: 43rem;
-    gap: 2rem;
-    padding: 2rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.empresa-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
     align-items: center;
 }
 
-.divEmpresa p {
+.empresa-content {
+    order: 1;
+}
+
+.empresa-visual {
+    order: 2;
+}
+
+.empresa-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.empresa-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #F37447, #ff6b35);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.empresa-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.empresa-header h2 {
+    font-size: 1.8rem;
+    color: #F37447;
+    margin: 0.5rem 0;
+}
+
+.empresa-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon {
+    background: linear-gradient(45deg, #F37447, #ff6b35);
+    color: white;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
     font-size: 1.5rem;
-    width: 45%;
-    margin: 1rem 5rem 2rem 2rem;
-    line-height: 1.6;
+}
+
+.info-card h3 {
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.info-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.empresa-text {
+    margin-bottom: 2rem;
+}
+
+.empresa-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1rem;
     text-align: justify;
 }
 
-.divEmpresa img {
+.empresa-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
     border-radius: 2rem;
-    height: 35rem;
-    width: 45rem;
-    margin: 5rem 5rem 3rem 5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.cta-button.secondary {
+    background: linear-gradient(45deg, #F37447, #ff6b35);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button i {
+    font-size: 1.2rem;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 400px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 2rem;
+    color: white;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #F37447;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-top: 0.2rem;
 }
 
 /* Galería de imágenes */

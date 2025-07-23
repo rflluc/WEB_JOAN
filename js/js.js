@@ -109,14 +109,39 @@ function animateOnScroll() {
 
 // Menu móvil toggle
 function toggleMobileMenu() {
-    const menu = document.querySelector('.divMenu nav');
+    const menu = document.querySelector('.nav-menu');
     const toggle = document.querySelector('.menu-toggle');
     
     if (menu && toggle) {
         menu.classList.toggle('mobile-open');
         toggle.classList.toggle('active');
+        
+        // Cerrar menú cuando se hace clic en un enlace
+        if (menu.classList.contains('mobile-open')) {
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('mobile-open');
+                    toggle.classList.remove('active');
+                }, { once: true });
+            });
+        }
     }
 }
+
+// Cerrar menú móvil al hacer clic fuera de él
+document.addEventListener('click', function(event) {
+    const menu = document.querySelector('.nav-menu');
+    const toggle = document.querySelector('.menu-toggle');
+    const divMenu = document.querySelector('.divMenu');
+    
+    if (menu && toggle && menu.classList.contains('mobile-open')) {
+        if (!divMenu.contains(event.target)) {
+            menu.classList.remove('mobile-open');
+            toggle.classList.remove('active');
+        }
+    }
+});
 
 // Inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
@@ -156,13 +181,21 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll();
     
     // Añadir smooth scroll a los enlaces de navegación
-    const navLinks = document.querySelectorAll('.divMenu a');
+    const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href.startsWith('#')) {
                 e.preventDefault();
                 smoothScroll(href.substring(1));
+                
+                // Cerrar menú móvil después de hacer clic en un enlace
+                const menu = document.querySelector('.nav-menu');
+                const toggle = document.querySelector('.menu-toggle');
+                if (menu && toggle && menu.classList.contains('mobile-open')) {
+                    menu.classList.remove('mobile-open');
+                    toggle.classList.remove('active');
+                }
             }
         });
     });
