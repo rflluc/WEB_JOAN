@@ -1,7 +1,7 @@
 * {
     /* border: 1px solid red; */
-    font-family: 'Roboto', sans-serif;
-
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -40,13 +40,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6rem;
-    /* background-color: red; */
+    height: 8rem;
 }
 
 .divLogo img {
-    height: 5rem;
-    width: 10rem;
+    height: 6rem;
+    width: 12rem;
 }
 
 .divMenu {
@@ -60,7 +59,7 @@
     color: black;
     font-size: 1.2rem;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+
 }
 
 .divMenu nav {
@@ -72,36 +71,37 @@
 /********** submenu ********/
 .divSlogan img {
     width: 100%;
-    height: 28rem;
-    filter: brightness(0.5);
+    height: 32rem;
+    filter: brightness(0.7);
 }
 
 .text-sobre-imatge_1 {
     position: absolute;
-    top: 23%;
-    left: 20%;
+    top: 30%;
+    left:16%;
     color: white;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 
 .text-sobre-imatge_2 {
     position: absolute;
-    top: 38%;
-    left: 30%;
+    top: 44%;
+    left: 16%;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    /* font-weight: 200; */
 
 }
 
 .demana_pressupost button {
     position: absolute;
-    top: 49%;
-    left: 38%;
+    top: 55%;
+    left: 16%;
     background-color: #F37447;
     border-radius: 1rem;
     color: white;
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: bold;
     padding: 1rem;
 }
@@ -109,12 +109,11 @@
 
 /************promocio************/
 .promocio {
-    height: 40rem;
+    height: 30rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
     gap: 5rem;
     /* background-color: green; */
 }
@@ -126,139 +125,108 @@
 
 .promocio p {
     color: #898989;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 400;
     margin: 0 1rem 0 1rem;
 }
 
-.promocio h2{
- margin: 1rem
-    
+.promocio h3 {
+    margin: 1rem;
 }
 
 .experiencia {
-    height: 29rem;
+    height: 24rem;
     width: 24rem;
-    border: 0.1rem solid black;
+  
+    /* border: 0.1rem solid black; */
 }
 
 
 .qualitat {
-      height: 29rem;
+    height: 24rem;
     width: 24rem;
-    border: 0.1rem solid black;
+    /* border: 0.1rem solid black; */
 
 }
 
 .pressupost {
-    height: 29rem;
+    height: 24rem;
     width: 24rem;
-    border: 0.1rem solid black;
+    /* border: 0.1rem solid black; */
 }
-
-
-/*
-.promocio i {
-    font-size: 5rem;
-    margin: 2rem 0 0 0;
-}
-
-.promocio h4 {
-    font-size: 1.82rem;
-
-}
-
-.promocio p {
-    font-size: 1.5rem;
-}
-
-
-.experiencia {
-    height: 25rem;
-    width: 27rem;
-    border-radius: 2rem;
-    border: 0.1rem solid black;
-  
-}
-
-.qualitat {
-    height: 25rem;
-    width: 27rem;
-    border-radius: 2rem;
-    border: 0.1rem solid black;
-  
-}
-
-.pressupost {
-    height: 25rem;
-    width: 27rem;
-    border-radius: 2rem;
-    border: 0.1rem solid black;
-   
-} */
 
 
 /********** Serveis *************/
 
+.titolServeis {
+    margin-left: 18rem;
+}
+
 .divServeis {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
 }
 
 .divServeis img {
-    height: 15rem;
-    width: 100%;
+    height: 16rem;
+    width: 90%;
 }
 
 .serveis_1 {
-    width: 70%;
-    gap: 2rem;
-    display: flex;
-    justify-content: center;
-    background-color: red;
+    width: 20%;
 }
 
 .obres {
-    background-color: green;
-    height: 35rem;
-    width: 35rem;
+    /* background-color: green; */
+
 }
 
 .reformes {
-    background-color: grey;
-    height: 35rem;
-    width: 35rem;
+    /* background-color: grey; */
+
 }
 
 .restauracions_rehabilitacions {
-    background-color: yellow;
-    height: 35rem;
-    width: 35rem;
+    /* background-color: yellow; */
+
 }
+
+
+.imatgeServeis{
+    height: 75rem;
+    /* background-color: red ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imatgeServeis img {
+    height: 60rem;
+    width: 30rem;
+    border-radius: 5rem;
+}
+
+
 
 .serveis_2 {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
+    width: 20%;
 }
 
-.micropigmentacio {
-    background-color: blue;
-    height: 35rem;
-    width: 35rem;
+.microciment {
+    /* background-color: blue; */
+
 }
 
 .lloguerMaquinaria {
-    background-color: pink;
-    height: 35rem;
-    width: 35rem;
+    /* background-color: pink; */
+
 }
 
 .projectesMida {
-    background-color: pink;
-    height: 35rem;
-    width: 35rem;
+    /* background-color: pink; */
+
 }
 
 
