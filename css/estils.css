@@ -2,6 +2,50 @@
     /* border: 1px solid red; */
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Estilos globales adicionales */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Cursor pointer para elementos clickeables */
+.fa-square-phone,
+.fa-square-whatsapp,
+.fa-square-facebook,
+.fa-at,
+.xarxes i {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.fa-square-phone:hover,
+.fa-square-whatsapp:hover,
+.fa-square-facebook:hover,
+.fa-at:hover,
+.xarxes i:hover {
+    transform: translateY(-2px);
+}
+
+/* Animación suave para las tarjetas de servicios */
+.obres, .reformes, .restauracions_rehabilitacions,
+.microciment, .lloguerMaquinaria, .projectesMida {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Estados activos para animaciones */
+.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 
@@ -447,33 +491,353 @@
 }
 
 .divImatges h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #333;
+}
+
+.divImatges p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.galeria-item {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+.galeria-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem 1rem 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover .galeria-overlay {
+    transform: translateY(0);
+}
+
+.galeria-overlay h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.galeria-overlay p {
+    margin: 0;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.galeria-boton button {
+    background-color: #F37447;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.galeria-boton button:hover {
+    background-color: #d4622a;
+    transform: translateY(-2px);
 }
 
 /* Contacto */
 .divContacte {
     padding: 3rem 2rem;
-    text-align: center;
     background-color: #fff;
 }
 
 .divContacte h1 {
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
     color: #333;
 }
 
-/* Footer */
+.divContacte > p {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.contacte-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contacte-info h2, .contacte-form h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.contacte-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.contacte-item:hover {
+    background-color: #f8f9fa;
+}
+
+.contacte-item i {
+    font-size: 1.5rem;
+    color: #F37447;
+    margin-top: 0.2rem;
+    min-width: 24px;
+}
+
+.contacte-item h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.contacte-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.contacte-xarxes {
+    margin-top: 2rem;
+}
+
+.contacte-xarxes h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.xarxes-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.xarxes-icons i {
+    font-size: 2rem;
+    color: #F37447;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.xarxes-icons i:hover {
+    color: #d4622a;
+    transform: translateY(-3px);
+}
+
+/* Formulario de contacto */
+.contacte-form {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #F37447;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+.form-button i {
+    font-size: 1.2rem;
+}
+
+/* Footer mejorado */
 .generalFooter {
     background-color: #333;
     color: white;
-    padding: 2rem;
-    text-align: center;
+    padding: 3rem 2rem 1rem;
 }
 
-.generalFooter h1 {
-    margin: 0;
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #F37447;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.footer-section ul li::before {
+    content: '▶';
+    color: #F37447;
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+
+.footer-xarxes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-xarxes i {
     font-size: 1.5rem;
+    color: #F37447;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-xarxes i:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-contacte p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-contacte p:hover {
+    color: #F37447;
+}
+
+.footer-contacte i {
+    color: #F37447;
+    width: 20px;
+}
+
+.footer-horari p {
+    margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 2rem;
+    text-align: center;
+    color: #999;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
 }
 
 /* Media Queries para secciones adicionales */
@@ -549,8 +913,22 @@
         padding: 2rem 1rem;
     }
     
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .contacte-container {
+        gap: 3rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
     .generalFooter {
-        padding: 1.5rem;
+        padding: 2rem 1rem 1rem;
     }
 }
 
@@ -654,12 +1032,36 @@
         font-size: 1.8rem;
     }
     
-    .generalFooter {
-        padding: 1.5rem 1rem;
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
-    .generalFooter h1 {
-        font-size: 1.3rem;
+    .galeria-item img {
+        height: 200px;
+    }
+    
+    .contacte-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contacte-form {
+        padding: 1.5rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-xarxes {
+        justify-content: center;
+    }
+    
+    .generalFooter {
+        padding: 2rem 1rem 1rem;
     }
 }
 
@@ -767,12 +1169,45 @@
         margin-bottom: 1rem;
     }
     
-    .generalFooter {
-        padding: 1rem 0.5rem;
+    .galeria-grid {
+        gap: 1rem;
     }
     
-    .generalFooter h1 {
-        font-size: 1.1rem;
+    .galeria-item img {
+        height: 180px;
+    }
+    
+    .contacte-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .contacte-form {
+        padding: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .xarxes-icons {
+        justify-content: center;
+    }
+    
+    .footer-container {
+        gap: 1rem;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .generalFooter {
+        padding: 1.5rem 0.5rem 1rem;
     }
 }
 

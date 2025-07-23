@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/estils.css" />
+  <script src="js/js.js" defer></script>
 
   <title>Construccions Rasquera</title>
 </head>
@@ -48,11 +49,11 @@
           <!--menú de navegació -->
           <div class="divMenu">
             <nav>
-              <a href="index.html">Inici</a>
-              <a href="serveis.html">Serveis</a>
-              <a href="galeriaImatges.html">Galeria Imatges</a>
-
-              <a href="contacte.html">Contacte</a>
+              <a href="#inici">Inici</a>
+              <a href="#serveis">Serveis</a>
+              <a href="#galeria">Galeria</a>
+              <a href="#sobre-nosaltres">Sobre nosaltres</a>
+              <a href="#contacte">Contacte</a>
             </nav>
           </div>
 
@@ -61,8 +62,8 @@
     </header>
 
     <!-- submenu -->
-    <div class="divSlogan">
-      <img src="/img/cap5_paletes_retall.png" alt="foto d'un casco">
+    <div class="divSlogan" id="inici">
+      <img src="img/cap5_paletes_retall.png" alt="foto d'un casco">
       <div class="text-sobre-imatge_1">Qualitat i experiència al teu servei.</div>
       <div class="text-sobre-imatge_2">"Construïm els teus somnis, digue'ns què necessites
         i ho farem realitat."</div>
@@ -100,7 +101,7 @@
 
 
     <!-- serveis -->
-    <h1 class="titolServeis">Serveis i Solucions</h1>
+    <h1 class="titolServeis" id="serveis">Serveis i Solucions</h1>
     <div class="divServeis">
       <div class="serveis_1">
         <div class="obres">
@@ -175,7 +176,7 @@
   </div>
 
   <!-- empresa-sobre nosaltres -->
-  <h1>Sobre nosaltres</h1>
+  <h1 id="sobre-nosaltres">Sobre nosaltres</h1>
   <div class="divEmpresa">
     <br />
     <p>
@@ -211,18 +212,211 @@
 
 
   <!-- imatges -->
-  <div class="divImatges">
+  <div class="divImatges" id="galeria">
     <h1>Galeria d'imatges</h1>
+    <p>Alguns dels nostres projectes realitzats</p>
+    
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="img/obraNova2.jpg" alt="Obra nova - Casa unifamiliar">
+        <div class="galeria-overlay">
+          <h3>Obra Nova</h3>
+          <p>Casa unifamiliar</p>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="img/reformes1.jpg" alt="Reforma integral">
+        <div class="galeria-overlay">
+          <h3>Reforma Integral</h3>
+          <p>Renovació completa</p>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="img/reformes2.jpg" alt="Reforma de cuina">
+        <div class="galeria-overlay">
+          <h3>Reforma de Cuina</h3>
+          <p>Disseny modern</p>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="img/reformes3.jpg" alt="Reforma de bany">
+        <div class="galeria-overlay">
+          <h3>Reforma de Bany</h3>
+          <p>Acabats de qualitat</p>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="img/obraNova3.jpg" alt="Construcció en procés">
+        <div class="galeria-overlay">
+          <h3>En Construcció</h3>
+          <p>Estructura moderna</p>
+        </div>
+      </div>
+      
+      <div class="galeria-item">
+        <img src="img/reformes4.jpg" alt="Acabats interiors">
+        <div class="galeria-overlay">
+          <h3>Acabats Interiors</h3>
+          <p>Detall i precisió</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="galeria-boton">
+      <button onclick="openWhatsApp()">Veure més projectes</button>
+    </div>
   </div>
 
   <!-- Contacte -->
-  <div class="divContacte">
+  <div class="divContacte" id="contacte">
     <h1>Contacta'ns</h1>
+    <p>Estem aquí per ajudar-te amb el teu projecte</p>
+    
+    <div class="contacte-container">
+      <div class="contacte-info">
+        <h2>Informació de contacte</h2>
+        
+        <div class="contacte-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h3>Telèfon</h3>
+            <p onclick="callPhone()" style="cursor: pointer; color: #F37447;">(+34) 676 165 524</p>
+          </div>
+        </div>
+        
+        <div class="contacte-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p onclick="sendEmail()" style="cursor: pointer; color: #F37447;">construccionsrasquera@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="contacte-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h3>Ubicació</h3>
+            <p>Ulldecona, Terres de l'Ebre<br>Tarragona, Catalunya</p>
+          </div>
+        </div>
+        
+        <div class="contacte-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <h3>Horari</h3>
+            <p>Dilluns - Divendres: 8:00 - 18:00<br>Dissabte: 9:00 - 14:00</p>
+          </div>
+        </div>
+        
+        <div class="contacte-xarxes">
+          <h3>Segueix-nos</h3>
+          <div class="xarxes-icons">
+            <i class="fa-brands fa-whatsapp" onclick="openWhatsApp()"></i>
+            <i class="fa-brands fa-facebook" onclick="openFacebook()"></i>
+            <i class="fa-solid fa-phone" onclick="callPhone()"></i>
+            <i class="fa-solid fa-envelope" onclick="sendEmail()"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contacte-form">
+        <h2>Envia'ns un missatge</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="nombre">Nom *</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono">Telèfon</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+          
+          <div class="form-group">
+            <label for="servicio">Servei d'interès</label>
+            <select id="servicio" name="servicio">
+              <option value="Consulta general">Consulta general</option>
+              <option value="Obra nova">Obra nova</option>
+              <option value="Reformes">Reformes</option>
+              <option value="Restauracions">Restauracions i rehabilitacions</option>
+              <option value="Microciment">Microciment</option>
+              <option value="Lloguer maquinària">Lloguer de maquinària</option>
+              <option value="Projecte a mida">Projecte a mida</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensaje">Missatge *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Explica'ns el teu projecte..."></textarea>
+          </div>
+          
+          <button type="submit" class="form-button">
+            <i class="fa-brands fa-whatsapp"></i>
+            Enviar consulta per WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <!-- footer -->
   <footer class="generalFooter">
-    <h1>Xarxes Socials</h1>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Construccions Rasquera</h3>
+        <p>Més de 50 anys d'experiència en construcció i reformes a les Terres de l'Ebre.</p>
+        <div class="footer-xarxes">
+          <i class="fa-brands fa-whatsapp" onclick="openWhatsApp()"></i>
+          <i class="fa-brands fa-facebook" onclick="openFacebook()"></i>
+          <i class="fa-solid fa-phone" onclick="callPhone()"></i>
+          <i class="fa-solid fa-envelope" onclick="sendEmail()"></i>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Serveis</h3>
+        <ul>
+          <li>Obra nova</li>
+          <li>Reformes integrals</li>
+          <li>Restauracions</li>
+          <li>Microciment</li>
+          <li>Lloguer de maquinària</li>
+          <li>Projectes a mida</li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contacte</h3>
+        <div class="footer-contacte">
+          <p><i class="fa-solid fa-phone"></i> (+34) 676 165 524</p>
+          <p><i class="fa-solid fa-envelope"></i> construccionsrasquera@gmail.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Ulldecona, Tarragona</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Horari</h3>
+        <div class="footer-horari">
+          <p><strong>Dilluns - Divendres:</strong><br>8:00 - 18:00</p>
+          <p><strong>Dissabte:</strong><br>9:00 - 14:00</p>
+          <p><strong>Diumenge:</strong><br>Tancat</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Construccions Rasquera. Tots els drets reservats.</p>
+      <p>Dissenyat amb ❤️ per oferir-te el millor servei</p>
+    </div>
   </footer>
   </div>
 </body>
