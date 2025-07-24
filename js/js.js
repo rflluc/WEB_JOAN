@@ -4,8 +4,9 @@
 const CONTACT_INFO = {
     phone: '676165524',
     email: 'construccionsrasquera@gmail.com',
+    // email: 'lluc.rasquera@gmail.com',
     whatsapp: '676165524',
-    facebook: 'https://facebook.com/construccionsrasquera',
+    facebook: 'https://www.facebook.com/profile.php?id=100005154678418',
     address: 'Ulldecona, Terres de l\'Ebre'
 };
 
@@ -48,28 +49,34 @@ function enviarFormulario(event) {
     
     // Validación básica
     if (!nombre || !email || !mensaje) {
-        alert('Por favor, rellena todos los campos obligatorios.');
+        alert('Si us plau, omple tots els camps obligatoris.');
         return;
     }
     
-    // Crear mensaje para WhatsApp
-    const whatsappMessage = `
-🏗️ *Nueva consulta desde la web*
+    // Crear mensaje para email
+    const emailSubject = encodeURIComponent(`Nova consulta des del web - ${servicio}`);
+    const emailBody = encodeURIComponent(`
+Hola,
 
-👤 *Nombre:* ${nombre}
-📧 *Email:* ${email}
-📞 *Teléfono:* ${telefono || 'No proporcionado'}
-🔧 *Servicio:* ${servicio}
+He rebut una nova consulta des del vostre lloc web:
 
-💬 *Mensaje:*
+Nom: ${nombre}
+Email: ${email}
+Telèfon: ${telefono || 'No proporcionat'}
+Servei d'interès: ${servicio}
+
+Missatge:
 ${mensaje}
-    `.trim();
+
+Salutacions,
+${nombre}
+    `.trim());
     
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/34${CONTACT_INFO.whatsapp}?text=${encodedMessage}`, '_blank');
+    // Abrir cliente de email
+    window.open(`mailto:${CONTACT_INFO.email}?subject=${emailSubject}&body=${emailBody}`, '_self');
     
     // Mostrar mensaje de confirmación
-    alert('¡Gracias por tu consulta! Te contactaremos pronto.');
+    alert('Gràcies per la teva consulta! S\'ha obert el teu client de correu electrònic.');
     form.reset();
 }
 

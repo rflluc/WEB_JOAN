@@ -62,10 +62,18 @@ body {
     padding: 0 1rem;
 }
 
+.tel_correu_xarxes .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 .telCorreu {
     display: flex;
     height: 3rem;
-    width: 30%;
     gap: 2rem;
     align-items: center;
     font-size: 0.9rem;
@@ -73,10 +81,8 @@ body {
 
 .xarxes {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     height: 3rem;
-    width: 30%;
     gap: 2rem;
     color: #8C8C8C;
     font-size: 1.5rem;
@@ -84,11 +90,18 @@ body {
 
 /*****/
 .divLogoMenu {
+    height: 8rem;
+    background-color: white;
+}
+
+.divLogoMenu .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
+    height: 100%;
 }
 
 .divLogo img {
@@ -341,7 +354,7 @@ body {
 
 .text-sobre-imatge_1 {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 16%;
     color: white;
     font-size: 4rem;
@@ -350,7 +363,7 @@ body {
 
 .text-sobre-imatge_2 {
     position: absolute;
-    top: 44%;
+    top: 42%;
     left: 16%;
     color: white;
     font-size: 2.5rem;
@@ -359,7 +372,7 @@ body {
 
 .demana_pressupost button {
     position: absolute;
-    top: 55%;
+    top: 62%;
     left: 16%;
     background-color: #F37447;
     border-radius: 1rem;
@@ -422,8 +435,12 @@ body {
 
 /********** Serveis *************/
 .titolServeis {
-    text-align: center;
-    margin: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: left;
+    font-size: 2.5rem;
+    color: #333;
 }
 
 .divServeis {
@@ -514,6 +531,16 @@ body {
 }
 
 /******sobre nosaltres******************/
+/* Título alineado con el contenido */
+#sobre-nosaltres {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: left;
+    font-size: 2.5rem;
+    color: #333;
+}
+
 .divEmpresa {
     display: flex;
     align-items: center;
@@ -522,7 +549,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem 3rem 2rem;
 }
 
 .divEmpresaImg {
@@ -1229,18 +1256,18 @@ body {
     .text-sobre-imatge_1 {
         font-size: 2rem;
         left: 5%;
-        top: 25%;
+        top: 20%;
     }
     
     .text-sobre-imatge_2 {
         font-size: 1.2rem;
         left: 5%;
-        top: 40%;
+        top: 38%;
     }
     
     .demana_pressupost button {
         left: 5%;
-        top: 55%;
+        top: 60%;
         font-size: 0.8rem;
         padding: 0.7rem;
     }
@@ -1366,19 +1393,19 @@ body {
     .text-sobre-imatge_1 {
         font-size: 1.5rem;
         left: 3%;
-        top: 20%;
+        top: 15%;
     }
     
     .text-sobre-imatge_2 {
         font-size: 1rem;
         left: 3%;
-        top: 35%;
+        top: 32%;
         right: 3%;
     }
     
     .demana_pressupost button {
         left: 3%;
-        top: 60%;
+        top: 65%;
         font-size: 0.7rem;
         padding: 0.6rem;
     }
