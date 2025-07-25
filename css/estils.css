@@ -1391,13 +1391,13 @@ body {
     }
     
     .text-sobre-imatge_1 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         left: 3%;
         top: 15%;
     }
     
     .text-sobre-imatge_2 {
-        font-size: 0.8rem;
+        font-size: 1rem;
         left: 3%;
         top: 32%;
         right: 3%;
@@ -1406,33 +1406,38 @@ body {
     .demana_pressupost button {
         left: 3%;
         top: 65%;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         padding: 0.6rem;
     }
     
     /* Promoción */
     .promocio {
-        padding: 1rem 0.5rem;
-        gap: 1.5rem;
+        padding: 0.5rem 0.3rem;
+        gap: 0.8rem;
     }
     
     .experiencia, .qualitat, .pressupost {
         width: 95%;
-        padding: 1rem;
+        padding: 0.5rem;
+        height: auto;
+        min-height: 10rem;
     }
     
     .promocio img {
-        height: 10rem;
+        height: 6rem;
+        width: 100%;
+        object-fit: contain;
     }
     
     .promocio h3 {
-        font-size: 1.1rem;
-        margin: 0.5rem;
+        font-size: 0.9rem;
+        margin: 0.2rem;
     }
     
     .promocio p {
-        font-size: 0.9rem;
-        margin: 0 0.5rem;
+        font-size: 0.7rem;
+        margin: 0 0.2rem;
+        line-height: 1.3;
     }
     
     /* Servicios */
@@ -1468,6 +1473,12 @@ body {
     }
     
     /* Sobre nosotros */
+    #sobre-nosaltres {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
+    }
+    
     .divEmpresa {
         flex-direction: column;
         padding: 1.5rem 0.5rem;
