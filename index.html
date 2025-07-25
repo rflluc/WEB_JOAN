@@ -1,9 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Construccions Rasquera - Obra Nova, Reformes i Rehabilitacions | Ulldecona</title>
+  <meta name="description" content="Construccions Rasquera: +50 anys d'experiència en obra nova, reformes integrals, restauracions i microciment a Ulldecona, Terres de l'Ebre. ✅ Pressupost gratuït ✅ Qualitat garantitzada" />
+  <meta name="keywords" content="construccions rasquera, obra nova ulldecona, reformes terres ebre, rehabilitacions tarragona, microciment, construcció ulldecona, reformes integrals, empresa construcció familiar" />
+  <meta name="author" content="Construccions Rasquera" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Construccions Rasquera - Obra Nova i Reformes | Ulldecona" />
+  <meta property="og:description" content="Més de 50 anys d'experiència en construcció a les Terres de l'Ebre. Obra nova, reformes, restauracions i microciment." />
+  <meta property="og:image" content="img/logoRasqueraPNG.png" />
+  <meta property="og:url" content="https://construccionsrasquera.com" />
+  
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Construccions Rasquera",
+    "description": "Empresa familiar de construcció amb més de 50 anys d'experiència",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ulldecona",
+      "addressRegion": "Tarragona",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34676165524",
+    "email": "construccionsrasquera@gmail.com",
+    "url": "https://construccionsrasquera.com",
+    "priceRange": "€€",
+    "serviceArea": "Terres de l'Ebre",
+    "services": ["Obra nova", "Reformes", "Restauracions", "Microciment", "Lloguer maquinària"]
+  }
+  </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
@@ -12,8 +48,6 @@
 
   <link rel="stylesheet" href="css/estils.css" />
   <script src="js/js.js" defer></script>
-
-  <title>Construccions Rasquera</title>
 </head>
 
 <body>
@@ -56,12 +90,12 @@
                 <span></span>
               </div>
 
-              <nav class="nav-menu">
-                <a href="#inici">Inici</a>
-                <a href="#serveis">Serveis</a>
-                <a href="#galeria">Galeria</a>
-                <a href="#sobre-nosaltres">Sobre nosaltres</a>
-                <a href="#contacte">Contacte</a>
+              <nav class="nav-menu" role="navigation" aria-label="Menú principal">
+                <a href="#inici" aria-label="Anar a Inici">Inici</a>
+                <a href="#serveis" aria-label="Veure els nostres serveis">Serveis</a>
+                <a href="#galeria" aria-label="Veure galeria d'imatges">Galeria</a>
+                <a href="#sobre-nosaltres" aria-label="Conèixer sobre nosaltres">Sobre nosaltres</a>
+                <a href="#contacte" aria-label="Contactar amb nosaltres">Contacte</a>
               </nav>
             </div>
           </div>
@@ -71,16 +105,17 @@
       </div>
     </header>
 
-    <!-- submenu -->
-    <div class="divSlogan" id="inici">
-      <img src="img/cap5_paletes_retall.png" alt="foto d'un casco">
-      <div class="text-sobre-imatge_1">Qualitat i experiència al teu servei.</div>
-      <div class="text-sobre-imatge_2">"Construïm els teus somnis, digue'ns què necessites
-        i ho farem realitat."</div>
-      <div class="demana_pressupost">
-        <button>Demana'ns pressupost</button>
-      </div>
-    </div>
+    <!-- Hero Section -->
+    <main>
+      <section class="divSlogan" id="inici" role="banner">
+        <img src="img/cap5_paletes_retall.png" alt="Operaris de Construccions Rasquera treballant en obra nova a Ulldecona">
+        <h1 class="text-sobre-imatge_1">Qualitat i experiència al teu servei.</h1>
+        <h2 class="text-sobre-imatge_2">"Construïm els teus somnis, digue'ns què necessites
+          i ho farem realitat."</h2>
+        <div class="demana_pressupost">
+          <button onclick="openWhatsApp()" aria-label="Demanar pressupost gratuït per WhatsApp">Demana'ns pressupost</button>
+        </div>
+      </section>
 
 
     <!-- promocio -->
