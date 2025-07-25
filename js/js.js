@@ -4,7 +4,6 @@
 const CONTACT_INFO = {
     phone: '676165524',
     email: 'construccionsrasquera@gmail.com',
-    // email: 'lluc.rasquera@gmail.com',
     whatsapp: '676165524',
     facebook: 'https://www.facebook.com/profile.php?id=100005154678418',
     address: 'Ulldecona, Terres de l\'Ebre'
