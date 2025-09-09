@@ -15,11 +15,11 @@ function callPhone() {
 }
 
 function sendEmail() {
-    window.open(`mailto:${CONTACT_INFO.email}?subject=Consulta desde la web&body=Hola, me gustaría solicitar información sobre sus servicios.`, '_blank');
+    window.open(`mailto:${CONTACT_INFO.email}?subject=Consulta desde la web&body=Hola, m'agradaria sol·licitar informació sobre els seus serveis.`, '_blank');
 }
 
 function openWhatsApp() {
-    const message = encodeURIComponent('Hola! Me gustaría solicitar información sobre sus servicios de construcción.');
+    const message = encodeURIComponent('Hola! M\'agradaria sol·licitar informació sobre els seus serveis de construcció.');
     window.open(`https://wa.me/34${CONTACT_INFO.whatsapp}?text=${message}`, '_blank');
 }
 
@@ -29,29 +29,30 @@ function openFacebook() {
 
 // Función para el botón de presupuesto
 function solicitarPresupuesto() {
-    const message = encodeURIComponent('Hola! Me gustaría solicitar un presupuesto sin compromiso.');
-    window.open(`https://wa.me/34${CONTACT_INFO.whatsapp}?text=${message}`, '_blank');
+    const emailSubject = encodeURIComponent('Sol·licitud de pressupost des del web');
+    const emailBody = encodeURIComponent('Hola! Voldria demanar un pressupost sense compromís.');
+    window.open(`mailto:${CONTACT_INFO.email}?subject=${emailSubject}&body=${emailBody}`, '_self');
 }
 
 // Función para enviar formulario de contacto
 function enviarFormulario(event) {
     event.preventDefault();
-    
+
     const form = event.target;
     const formData = new FormData(form);
-    
+
     const nombre = formData.get('nombre');
     const email = formData.get('email');
     const telefono = formData.get('telefono');
     const servicio = formData.get('servicio');
     const mensaje = formData.get('mensaje');
-    
+
     // Validación básica
     if (!nombre || !email || !mensaje) {
         alert('Si us plau, omple tots els camps obligatoris.');
         return;
     }
-    
+
     // Crear mensaje para email
     const emailSubject = encodeURIComponent(`Nova consulta des del web - ${servicio}`);
     const emailBody = encodeURIComponent(`
@@ -70,10 +71,10 @@ ${mensaje}
 Salutacions,
 ${nombre}
     `.trim());
-    
+
     // Abrir cliente de email
     window.open(`mailto:${CONTACT_INFO.email}?subject=${emailSubject}&body=${emailBody}`, '_self');
-    
+
     // Mostrar mensaje de confirmación
     alert('Gràcies per la teva consulta! S\'ha obert el teu client de correu electrònic.');
     form.reset();
@@ -93,7 +94,7 @@ function smoothScroll(targetId) {
 // Animaciones al hacer scroll
 function animateOnScroll() {
     const elements = document.querySelectorAll('.servei-item, .obres, .reformes, .restauracions_rehabilitacions, .microciment, .lloguerMaquinaria, .projectesMida');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -104,7 +105,7 @@ function animateOnScroll() {
     }, {
         threshold: 0.1
     });
-    
+
     elements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -117,11 +118,11 @@ function animateOnScroll() {
 function toggleMobileMenu() {
     const menu = document.querySelector('.nav-menu');
     const toggle = document.querySelector('.menu-toggle');
-    
+
     if (menu && toggle) {
         menu.classList.toggle('mobile-open');
         toggle.classList.toggle('active');
-        
+
         // Cerrar menú cuando se hace clic en un enlace
         if (menu.classList.contains('mobile-open')) {
             const links = menu.querySelectorAll('a');
@@ -136,11 +137,11 @@ function toggleMobileMenu() {
 }
 
 // Cerrar menú móvil al hacer clic fuera de él
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const menu = document.querySelector('.nav-menu');
     const toggle = document.querySelector('.menu-toggle');
     const divMenu = document.querySelector('.divMenu');
-    
+
     if (menu && toggle && menu.classList.contains('mobile-open')) {
         if (!divMenu.contains(event.target)) {
             menu.classList.remove('mobile-open');
@@ -150,51 +151,51 @@ document.addEventListener('click', function(event) {
 });
 
 // Inicialización cuando se carga la página
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Añadir event listeners a los iconos de redes sociales
     const phoneIcons = document.querySelectorAll('.fa-square-phone');
     const emailIcons = document.querySelectorAll('.fa-at');
     const whatsappIcons = document.querySelectorAll('.fa-square-whatsapp');
     const facebookIcons = document.querySelectorAll('.fa-square-facebook');
-    
+
     phoneIcons.forEach(icon => {
         icon.style.cursor = 'pointer';
         icon.addEventListener('click', callPhone);
     });
-    
+
     emailIcons.forEach(icon => {
         icon.style.cursor = 'pointer';
         icon.addEventListener('click', sendEmail);
     });
-    
+
     whatsappIcons.forEach(icon => {
         icon.style.cursor = 'pointer';
         icon.addEventListener('click', openWhatsApp);
     });
-    
+
     facebookIcons.forEach(icon => {
         icon.style.cursor = 'pointer';
         icon.addEventListener('click', openFacebook);
     });
-    
+
     // Añadir funcionalidad al botón de presupuesto
     const presupuestoBtn = document.querySelector('.demana_pressupost button');
     if (presupuestoBtn) {
         presupuestoBtn.addEventListener('click', solicitarPresupuesto);
     }
-    
+
     // Inicializar animaciones
     animateOnScroll();
-    
+
     // Añadir smooth scroll a los enlaces de navegación
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href.startsWith('#')) {
                 e.preventDefault();
                 smoothScroll(href.substring(1));
-                
+
                 // Cerrar menú móvil después de hacer clic en un enlace
                 const menu = document.querySelector('.nav-menu');
                 const toggle = document.querySelector('.menu-toggle');
@@ -205,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Inicializar formulario de contacto si existe
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -223,7 +224,7 @@ function mostrarMasInfo(servicio) {
         'lloguer': 'Alquiler de maquinaria especializada para construcción. Equipos profesionales y mantenimiento incluido.',
         'projectes': 'Proyectos personalizados desde la planificación hasta la entrega. Asesoramiento técnico completo.'
     };
-    
+
     alert(info[servicio] || 'Información no disponible');
 }
 
