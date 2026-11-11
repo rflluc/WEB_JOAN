@@ -1,11 +1,10 @@
 * {
-    /* border: 1px solid red; */
-    /* font-family: 'Roboto', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
-/* Estilos globales adicionales */
+/* Estilos globales */
 html {
     scroll-behavior: smooth;
 }
@@ -14,26 +13,6 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-}
-
-/* --- AFEGEIX-HO AQUÍ --- */
-.tel_correu_xarxes {
-    display: flex;
-    justify-content: center;
-    background-color: #F9F9F9;
-    width: 100%;
-}
-
-.divLogoMenu {
-    width: 100%;
-    background-color: white;
-}
-/* --------------------- */
-
-
-/******  Capçalera ******/
-.divHeader {
-    width: 100%;
 }
 
 /* Cursor pointer para elementos clickeables */
@@ -54,7 +33,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Animación suave para las tarjetas de servicios */
+/* Animaciones para las tarjetas */
 .obres, .reformes, .restauracions_rehabilitacions,
 .microciment, .lloguerMaquinaria, .projectesMida {
     opacity: 0;
@@ -62,13 +41,11 @@ body {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Estados activos para animaciones */
 .animate-in {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
-/* Clase para elementos ocultos visualmente pero accesibles para lectores de pantalla */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -81,18 +58,17 @@ body {
     border: 0;
 }
 
-
-/******  Capçalera ******/
+/********** Capçalera **********/
 .divHeader {
     width: 100%;
 }
 
-/*****/
 .tel_correu_xarxes {
     display: flex;
     justify-content: center;
     background-color: #F9F9F9;
     padding: 0 1rem;
+    width: 100%;
 }
 
 .tel_correu_xarxes .container {
@@ -101,7 +77,7 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .telCorreu {
@@ -121,10 +97,10 @@ body {
     font-size: 1.5rem;
 }
 
-/*****/
 .divLogoMenu {
     height: 8rem;
     background-color: white;
+    width: 100%;
 }
 
 .divLogoMenu .container {
@@ -133,7 +109,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     height: 100%;
 }
 
@@ -167,7 +143,6 @@ body {
     gap: 3rem;
 }
 
-/* Botón hamburguesa (oculto por defecto) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -185,7 +160,6 @@ body {
     transform-origin: center;
 }
 
-/* Animación del botón hamburguesa cuando está activo */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
@@ -198,188 +172,12 @@ body {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Media Queries para Responsive */
-
-/* Tablets (hasta 1024px) */
-@media screen and (max-width: 1024px) {
-    .tel_correu_xarxes {
-        justify-content: space-between;
-        padding: 0 2rem;
-    }
-    
-    .telCorreu {
-        width: auto;
-        gap: 1rem;
-        font-size: 0.8rem;
-    }
-    
-    .xarxes {
-        width: auto;
-        gap: 1rem;
-        font-size: 1.2rem;
-    }
-    
-    .divLogoMenu {
-        padding: 0 1rem;
-    }
-    
-    .divLogo img {
-        height: 5rem;
-        width: 10rem;
-    }
-    
-    .divMenu nav {
-        gap: 2rem;
-    }
-    
-    .divMenu a {
-        font-size: 1.1rem;
-    }
-}
-
-/* Móviles grandes (hasta 768px) */
-@media screen and (max-width: 768px) {
-    .tel_correu_xarxes {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem;
-    }
-    
-    .telCorreu {
-        width: 100%;
-        justify-content: center;
-        gap: 1rem;
-        font-size: 0.7rem;
-        height: 2rem;
-    }
-    
-    .xarxes {
-        width: 100%;
-        justify-content: center;
-        gap: 1.5rem;
-        font-size: 1.1rem;
-        height: 2rem;
-    }
-    
-    .divLogoMenu {
-        height: auto;
-        padding: 1rem;
-        gap: 1rem;
-        justify-content: space-between;
-    }
-    
-    .divLogo img {
-        height: 4rem;
-        width: 8rem;
-    }
-    
-    .divMenu {
-        width: auto;
-    }
-    
-    /* Mostrar botón hamburguesa en móviles */
-    .menu-toggle {
-        display: flex;
-    }
-    
-    /* Ocultar menú por defecto en móviles */
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 250px;
-        background-color: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding-top: 5rem;
-        gap: 2rem;
-        transition: right 0.3s ease;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
-    
-    /* Menú móvil abierto */
-    .nav-menu.mobile-open {
-        right: 0;
-    }
-    
-    .nav-menu a {
-        font-size: 1.1rem;
-        padding: 1rem;
-        width: 80%;
-        text-align: center;
-        border-bottom: 1px solid #eee;
-    }
-    
-    .nav-menu a:hover {
-        background-color: #F37447;
-        color: white;
-    }
-}
-
-/* Móviles pequeños (hasta 480px) */
-@media screen and (max-width: 480px) {
-    .tel_correu_xarxes {
-        padding: 0.5rem;
-    }
-    
-    .telCorreu {
-        flex-direction: column;
-        gap: 0.3rem;
-        font-size: 0.6rem;
-        text-align: center;
-    }
-    
-    .xarxes {
-        gap: 1rem;
-        font-size: 1rem;
-    }
-    
-    .divLogoMenu {
-        padding: 0.5rem 1rem;
-        justify-content: space-between;
-    }
-    
-    .divLogo img {
-        height: 3.5rem;
-        width: 7rem;
-    }
-    
-    /* Menú hamburguesa para móviles pequeños */
-    .menu-toggle {
-        display: flex;
-    }
-    
-    .nav-menu {
-        width: 200px;
-        padding-top: 4rem;
-        gap: 1.5rem;
-    }
-    
-    .nav-menu a {
-        font-size: 1rem;
-        padding: 0.8rem;
-        width: 90%;
-    }
-    
-    /* Ocultar algunos elementos en móviles muy pequeños si es necesario */
-    .telCorreu p {
-        margin: 0;
-    }
-}
-
-
-
-/********** submenu ********/
+/********** Banner principal (divSlogan) **********/
 .divSlogan {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centrado perfecto */
     overflow: hidden;
 }
 
@@ -429,21 +227,19 @@ body {
     background-color: #d4622a;
 }
 
-/************promocio************/
+/********** Promoció **********/
 .promocio {
-    height: auto;
-    min-height: 30rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
     background-color: #F8F9F9;
-    padding: 2rem;
 }
 
 .promocio img {
-    height: 15rem;
+    height: 12rem;
     width: 100%;
     object-fit: cover;
 }
@@ -452,7 +248,7 @@ body {
     color: #898989;
     font-size: 1rem;
     font-weight: 400;
-    margin: 0 1rem 0 1rem;
+    margin: 0 1rem;
     text-align: center;
 }
 
@@ -462,22 +258,23 @@ body {
 }
 
 .experiencia, .qualitat, .pressupost {
-    height: 25rem;
-    width: 25rem;
+    height: auto;
+    min-height: 24rem;
+    width: 100%;
     border-radius: 1rem;
-    box-shadow: 0px 0px 10px #757373;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
-/********** Serveis *************/
+/********** Serveis **********/
 .titolServeis {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 2rem 1rem 1rem 1rem;
     text-align: left;
     font-size: 2.5rem;
     color: #333;
@@ -485,56 +282,19 @@ body {
 
 .divServeis {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    margin: 2rem;
+    margin: 2rem auto;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 1rem;
 }
 
-.servei-item {
-    background-color: #fff;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servei-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.divServeis img {
-    height: 16rem;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-}
-
-.servei-item h3 {
-    text-align: center;
-    margin: 1rem 0;
-    color: #333;
-    font-size: 1.3rem;
-}
-
-.servei-item p {
-    text-align: justify;
-    line-height: 1.6;
-    color: #666;
-    font-size: 0.95rem;
-}
-
-/* Mantener compatibilidad con estructura anterior */
 .serveis_1, .serveis_2 {
     display: contents;
 }
 
 .obres, .reformes, .restauracions_rehabilitacions,
-.microciment, .lloguerMaquinaria, .projectesMida {
+.microciment, .lloguerMaquinaria, .projectesMida, .servei-item {
     background-color: #fff;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -543,12 +303,12 @@ body {
 }
 
 .obres:hover, .reformes:hover, .restauracions_rehabilitacions:hover,
-.microciment:hover, .lloguerMaquinaria:hover, .projectesMida:hover {
+.microciment:hover, .lloguerMaquinaria:hover, .projectesMida:hover, .servei-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-.serveis_1 img, .serveis_2 img {
+.divServeis img, .serveis_1 img, .serveis_2 img {
     height: 16rem;
     width: 100%;
     object-fit: cover;
@@ -556,26 +316,25 @@ body {
     margin-bottom: 1rem;
 }
 
-.serveis_1 h3, .serveis_2 h3 {
+.divServeis h3, .serveis_1 h3, .serveis_2 h3 {
     text-align: center;
     margin: 1rem 0;
     color: #333;
     font-size: 1.3rem;
 }
 
-.serveis_1 p, .serveis_2 p {
+.divServeis p, .serveis_1 p, .serveis_2 p {
     text-align: justify;
     line-height: 1.6;
     color: #666;
     font-size: 0.95rem;
 }
 
-/******sobre nosaltres******************/
-/* Título alineado con el contenido */
+/********** Sobre nosaltres **********/
 #sobre-nosaltres {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 2rem 1rem 1rem 1rem;
     text-align: left;
     font-size: 2.5rem;
     color: #333;
@@ -589,7 +348,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 2rem 3rem 2rem;
+    padding: 2rem 1rem 3rem 1rem;
 }
 
 .divEmpresaImg {
@@ -629,209 +388,9 @@ body {
     margin: 0;
 }
 
-.empresa-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.empresa-content {
-    order: 1;
-}
-
-.empresa-visual {
-    order: 2;
-}
-
-.empresa-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.empresa-badge {
-    display: inline-block;
-    background: linear-gradient(45deg, #F37447, #ff6b35);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 2rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.empresa-header h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin: 1rem 0 0.5rem 0;
-}
-
-.empresa-header h2 {
-    font-size: 1.8rem;
-    color: #F37447;
-    margin: 0.5rem 0;
-}
-
-.empresa-subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    margin: 0;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.info-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.info-icon {
-    background: linear-gradient(45deg, #F37447, #ff6b35);
-    color: white;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 1.5rem;
-}
-
-.info-card h3 {
-    color: #333;
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
-}
-
-.info-card p {
-    color: #666;
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-.empresa-text {
-    margin-bottom: 2rem;
-}
-
-.empresa-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 1rem;
-    text-align: justify;
-}
-
-.empresa-cta {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cta-button {
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-}
-
-.cta-button.secondary {
-    background: linear-gradient(45deg, #F37447, #ff6b35);
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button i {
-    font-size: 1.2rem;
-}
-
-.image-container {
-    position: relative;
-    border-radius: 2rem;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.image-container img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.image-container:hover img {
-    transform: scale(1.05);
-}
-
-.image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 2rem;
-    color: white;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    text-align: center;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #F37447;
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: #ddd;
-    margin-top: 0.2rem;
-}
-
-/* Galería de imágenes */
+/********** Galeria **********/
 .divImatges {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
     text-align: center;
     background-color: #f8f9fa;
 }
@@ -925,9 +484,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* Contacto */
+/********** Contacte **********/
 .divContacte {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
     background-color: #fff;
 }
 
@@ -1017,7 +576,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Formulario de contacto */
 .contacte-form {
     background-color: #f8f9fa;
     padding: 2rem;
@@ -1086,11 +644,11 @@ body {
     font-size: 1.2rem;
 }
 
-/* Footer mejorado */
+/********** Footer **********/
 .generalFooter {
     background-color: #333;
     color: white;
-    padding: 3rem 2rem 1rem;
+    padding: 3rem 1rem 1rem;
 }
 
 .footer-container {
@@ -1098,8 +656,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
 }
 
 .footer-section h3 {
@@ -1186,424 +743,81 @@ body {
     font-size: 0.9rem;
 }
 
-/* Media Queries para secciones adicionales */
-
-/* Tablets (hasta 1024px) */
+/********** Media Queries (Dispositius mòbils i tablets) **********/
 @media screen and (max-width: 1024px) {
-    /* Hero/Slogan */
     .text-sobre-imatge_1 {
         font-size: 3rem;
-        left: 10%;
+        left: 5%;
     }
-    
     .text-sobre-imatge_2 {
-        font-size: 2rem;
-        left: 10%;
+        font-size: 1.8rem;
+        left: 5%;
     }
-    
     .demana_pressupost button {
-        left: 10%;
-        font-size: 0.9rem;
-        padding: 0.8rem;
-    }
-    
-    /* Promoción */
-    .promocio {
-        gap: 3rem;
-        padding: 1.5rem;
-    }
-    
-    .experiencia, .qualitat, .pressupost {
-        height: 22rem;
-        width: 22rem;
-    }
-    
-    /* Servicios */
-.divServeis {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1200px;
-    padding: 0 1rem;
-}
-    .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
-    .microciment, .lloguerMaquinaria, .projectesMida {
-        padding: 1.2rem;
-    }
-    
-    .divServeis img, .serveis_1 img, .serveis_2 img {
-        height: 14rem;
-    }
-    
-    .servei-item h3, .serveis_1 h3, .serveis_2 h3 {
-        font-size: 1.2rem;
-    }
-    
-    .servei-item p, .serveis_1 p, .serveis_2 p {
-        font-size: 0.9rem;
-    }
-    
-    /* Sobre nosotros */
-    .divEmpresa {
-        padding: 2rem 1rem;
-        gap: 2rem;
-    }
-    
-    .divEmpresaImg {
-        width: 45%;
-        height: 20rem;
-    }
-    
-    .divEmpresaText {
-        width: 50%;
-        padding: 1.5rem;
-    }
-    
-    .divEmpresaText p {
-        font-size: 1rem;
-    }
-    
-    /* Galería, Contacto, Footer */
-    .divImatges, .divContacte {
-        padding: 2rem 1rem;
-    }
-    
-    .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .contacte-container {
-        gap: 3rem;
-    }
-    
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .generalFooter {
-        padding: 2rem 1rem 1rem;
+        left: 5%;
     }
 }
 
-/* Móviles grandes (hasta 768px) */
 @media screen and (max-width: 768px) {
-    /* Hero/Slogan */
+    .tel_correu_xarxes .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .telCorreu, .xarxes {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding-top: 5rem;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    .nav-menu.mobile-open {
+        right: 0;
+    }
     .divSlogan img {
         height: 20rem;
     }
-    
     .text-sobre-imatge_1 {
         font-size: 2rem;
-        left: 5%;
-        top: 20%;
+        top: 15%;
     }
-    
     .text-sobre-imatge_2 {
         font-size: 1.2rem;
-        left: 5%;
         top: 38%;
     }
-    
     .demana_pressupost button {
-        left: 5%;
-        top: 60%;
+        top: 65%;
         font-size: 0.8rem;
         padding: 0.7rem;
     }
-    
-    /* Promoción */
- .promocio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1rem;
-    background-color: #F8F9F9;
-}
-
-.experiencia, .qualitat, .pressupost {
-    height: auto; /* Permite que la altura se adapte al contenido */
-    min-height: 24rem;
-    width: 100%; /* Ocupa el 100% de su celda en la rejilla */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-    
-    .promocio img {
-        height: 12rem;
-    }
-    
-    /* Servicios */
-    .divServeis {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin: 1rem;
-    }
-    
-    .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
-    .microciment, .lloguerMaquinaria, .projectesMida {
-        padding: 1rem;
-    }
-    
-    .divServeis img, .serveis_1 img, .serveis_2 img {
-        height: 12rem;
-    }
-    
-    .servei-item h3, .serveis_1 h3, .serveis_2 h3 {
-        font-size: 1.1rem;
-    }
-    
-    .servei-item p, .serveis_1 p, .serveis_2 p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-    
-    /* Sobre nosotros */
     .divEmpresa {
         flex-direction: column;
-        padding: 2rem 1rem;
-        gap: 2rem;
-        text-align: center;
     }
-    
-    .divEmpresaImg {
+    .divEmpresaImg, .divEmpresaText {
         width: 100%;
-        max-width: 400px;
-        height: 18rem;
-        margin: 0 auto;
     }
-    
-    .divEmpresaText {
-        width: 100%;
-        padding: 1.5rem;
-    }
-    
-    .divEmpresaText p {
-        font-size: 1rem;
-        text-align: left;
-    }
-    
-    /* Galería, Contacto, Footer */
-    .divImatges, .divContacte {
-        padding: 2rem 1rem;
-    }
-    
-    .divImatges h1, .divContacte h1 {
-        font-size: 1.8rem;
-    }
-    
-    .galeria-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .galeria-item img {
-        height: 200px;
-    }
-    
     .contacte-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .contacte-form {
-        padding: 1.5rem;
-    }
-    
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        text-align: center;
-    }
-    
-    .footer-xarxes {
-        justify-content: center;
-    }
-    
-    .generalFooter {
-        padding: 2rem 1rem 1rem;
     }
 }
 
-/* Móviles pequeños (hasta 480px) */
 @media screen and (max-width: 480px) {
-    /* Hero/Slogan */
-    .divSlogan img {
-        height: 15rem;
-    }
-    
     .text-sobre-imatge_1 {
-        font-size: 1.2rem;
-        left: 3%;
-        top: 15%;
+        font-size: 1.4rem;
     }
-    
     .text-sobre-imatge_2 {
         font-size: 1rem;
-        left: 3%;
-        top: 32%;
-        right: 3%;
-    }
-    
-    .demana_pressupost button {
-        left: 3%;
-        top: 65%;
-        font-size: 0.8rem;
-        padding: 0.6rem;
-    }
-    
-    /* Promoción */
-    .promocio {
-        padding: 0.5rem 0.3rem;
-        gap: 0.8rem;
-    }
-    
-    .experiencia, .qualitat, .pressupost {
-        width: 95%;
-        padding: 0.5rem;
-        height: auto;
-        min-height: 10rem;
-    }
-    
-    .promocio img {
-        height: 6rem;
-        width: 100%;
-        object-fit: contain;
-    }
-    
-    .promocio h3 {
-        font-size: 0.9rem;
-        margin: 0.2rem;
-    }
-    
-    .promocio p {
-        font-size: 0.7rem;
-        margin: 0 0.2rem;
-        line-height: 1.3;
-    }
-    
-    /* Servicios */
-    .titolServeis {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-        padding: 0 1rem;
-    }
-    
-    .divServeis {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 0.5rem;
-    }
-    
-    .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
-    .microciment, .lloguerMaquinaria, .projectesMida {
-        padding: 0.8rem;
-    }
-    
-    .divServeis img, .serveis_1 img, .serveis_2 img {
-        height: 10rem;
-    }
-    
-    .servei-item h3, .serveis_1 h3, .serveis_2 h3 {
-        font-size: 1rem;
-        margin: 0.5rem 0;
-    }
-    
-    .servei-item p, .serveis_1 p, .serveis_2 p {
-        font-size: 0.85rem;
-        line-height: 1.4;
-    }
-    
-    /* Sobre nosotros */
-    #sobre-nosaltres {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-        padding: 0 1rem;
-    }
-    
-    .divEmpresa {
-        flex-direction: column;
-        padding: 1.5rem 0.5rem;
-        gap: 1.5rem;
-    }
-    
-    .divEmpresaImg {
-        width: 100%;
-        max-width: 320px;
-        height: 15rem;
-        margin: 0 auto;
-    }
-    
-    .divEmpresaText {
-        width: 100%;
-        padding: 1rem;
-    }
-    
-    .divEmpresaText p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-        text-align: left;
-    }
-    
-    /* Galería, Contacto, Footer */
-    .divImatges, .divContacte {
-        padding: 1.5rem 0.5rem;
-    }
-    
-    .divImatges h1, .divContacte h1 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .galeria-grid {
-        gap: 1rem;
-    }
-    
-    .galeria-item img {
-        height: 180px;
-    }
-    
-    .contacte-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-    
-    .contacte-form {
-        padding: 1rem;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.6rem;
-        font-size: 0.9rem;
-    }
-    
-    .xarxes-icons {
-        justify-content: center;
-    }
-    
-    .footer-container {
-        gap: 1rem;
-    }
-    
-    .footer-section {
-        text-align: center;
-    }
-    
-    .generalFooter {
-        padding: 1.5rem 0.5rem 1rem;
     }
 }
-
-/************************/
