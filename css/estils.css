@@ -1192,12 +1192,14 @@ body {
     }
     
     /* Servicios */
-    .divServeis {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        margin: 1.5rem;
-    }
-    
+.divServeis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
     .servei-item, .obres, .reformes, .restauracions_rehabilitacions,
     .microciment, .lloguerMaquinaria, .projectesMida {
         padding: 1.2rem;
@@ -1286,19 +1288,28 @@ body {
     }
     
     /* Promoción */
-    .promocio {
-        flex-direction: column;
-        gap: 2rem;
-        height: auto;
-        padding: 2rem 1rem;
-    }
-    
-    .experiencia, .qualitat, .pressupost {
-        height: auto;
-        width: 90%;
-        max-width: 300px;
-        padding: 1.5rem;
-    }
+ .promocio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    background-color: #F8F9F9;
+}
+
+.experiencia, .qualitat, .pressupost {
+    height: auto; /* Permite que la altura se adapte al contenido */
+    min-height: 24rem;
+    width: 100%; /* Ocupa el 100% de su celda en la rejilla */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
     
     .promocio img {
         height: 12rem;
