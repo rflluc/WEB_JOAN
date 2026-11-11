@@ -177,47 +177,59 @@ body {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* Centrado perfecto */
+    margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 32rem;
+    padding: 0 6%;
 }
 
 .divSlogan img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 32rem;
-    filter: brightness(0.7);
+    height: 100%;
+    filter: brightness(0.65);
     object-fit: cover;
-    display: block;
+    z-index: 1;
+}
+
+.text-sobre-imatge_1,
+.text-sobre-imatge_2,
+.demana_pressupost {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 1rem 0;
+    width: 100%;
+    max-width: 900px;
 }
 
 .text-sobre-imatge_1 {
-    position: absolute;
-    top: 22%;
-    left: 8%;
-    right: 8%;
     color: white;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .text-sobre-imatge_2 {
-    position: absolute;
-    top: 42%;
-    left: 8%;
-    right: 8%;
     color: white;
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
 }
 
 .demana_pressupost button {
-    position: absolute;
-    top: 65%;
-    left: 8%;
     background-color: #F37447;
     border-radius: 1rem;
     color: white;
     font-size: 1rem;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.9rem 1.8rem;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -235,7 +247,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 1rem;
-    background-color: #F8F9F9;
+    background-color: transparent;
 }
 
 .promocio img {
@@ -259,15 +271,16 @@ body {
 
 .experiencia, .qualitat, .pressupost {
     height: auto;
-    min-height: 24rem;
+    min-height: 22rem;
     width: 100%;
     border-radius: 1rem;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 /********** Serveis **********/
@@ -744,20 +757,6 @@ body {
 }
 
 /********** Media Queries (Dispositius mòbils i tablets) **********/
-@media screen and (max-width: 1024px) {
-    .text-sobre-imatge_1 {
-        font-size: 3rem;
-        left: 5%;
-    }
-    .text-sobre-imatge_2 {
-        font-size: 1.8rem;
-        left: 5%;
-    }
-    .demana_pressupost button {
-        left: 5%;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .tel_correu_xarxes .container {
         flex-direction: column;
@@ -786,21 +785,9 @@ body {
     .nav-menu.mobile-open {
         right: 0;
     }
-    .divSlogan img {
-        height: 20rem;
-    }
-    .text-sobre-imatge_1 {
-        font-size: 2rem;
-        top: 15%;
-    }
-    .text-sobre-imatge_2 {
-        font-size: 1.2rem;
-        top: 38%;
-    }
-    .demana_pressupost button {
-        top: 65%;
-        font-size: 0.8rem;
-        padding: 0.7rem;
+    .divSlogan {
+        min-height: 22rem;
+        padding: 0 1rem;
     }
     .divEmpresa {
         flex-direction: column;
@@ -814,10 +801,7 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-    .text-sobre-imatge_1 {
-        font-size: 1.4rem;
-    }
-    .text-sobre-imatge_2 {
-        font-size: 1rem;
+    .divSlogan {
+        min-height: 18rem;
     }
 }
