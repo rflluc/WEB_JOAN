@@ -16,6 +16,26 @@ body {
     line-height: 1.6;
 }
 
+/* --- AFEGEIX-HO AQUÍ --- */
+.tel_correu_xarxes {
+    display: flex;
+    justify-content: center;
+    background-color: #F9F9F9;
+    width: 100%;
+}
+
+.divLogoMenu {
+    width: 100%;
+    background-color: white;
+}
+/* --------------------- */
+
+
+/******  Capçalera ******/
+.divHeader {
+    width: 100%;
+}
+
 /* Cursor pointer para elementos clickeables */
 .fa-square-phone,
 .fa-square-whatsapp,
@@ -353,9 +373,14 @@ body {
 }
 
 
+
 /********** submenu ********/
 .divSlogan {
     position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .divSlogan img {
@@ -363,30 +388,32 @@ body {
     height: 32rem;
     filter: brightness(0.7);
     object-fit: cover;
+    display: block;
 }
 
 .text-sobre-imatge_1 {
     position: absolute;
-    top: 25%;
-    left: 16%;
+    top: 22%;
+    left: 8%;
+    right: 8%;
     color: white;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bold;
 }
 
 .text-sobre-imatge_2 {
     position: absolute;
     top: 42%;
-    left: 16%;
+    left: 8%;
+    right: 8%;
     color: white;
-    font-size: 2.5rem;
-    /* font-weight: 200; */
+    font-size: 2rem;
 }
 
 .demana_pressupost button {
     position: absolute;
-    top: 62%;
-    left: 16%;
+    top: 65%;
+    left: 8%;
     background-color: #F37447;
     border-radius: 1rem;
     color: white;
