@@ -33,8 +33,12 @@ body {
 }
 
 /* Animaciones para las tarjetas */
-.obres, .reformes, .restauracions_rehabilitacions,
-.microciment, .lloguerMaquinaria, .projectesMida {
+.obres,
+.reformes,
+.restauracions_rehabilitacions,
+.microciment,
+.lloguerMaquinaria,
+.projectesMida {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -197,6 +201,7 @@ body {
     object-fit: cover;
     filter: brightness(0.65);
     z-index: -1;
+    transform: none !important;
 }
 
 /* Evita que los encabezados se monten entre sí */
@@ -233,6 +238,7 @@ body {
     width: auto;
     max-width: 100%;
     margin: 0;
+    
 }
 
 .demana_pressupost button {
@@ -284,12 +290,14 @@ body {
     text-align: center;
 }
 
-.experiencia, .qualitat, .pressupost {
+.experiencia,
+.qualitat,
+.pressupost {
     height: auto;
     min-height: 22rem;
     width: 100%;
     border-radius: 1rem;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -302,8 +310,8 @@ body {
 .titolServeis {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem 1rem 1rem;
-    text-align: left;
+     padding: 2rem 1rem 0.5rem 1rem; 
+    text-align: center;
     font-size: 2.5rem;
     color: #333;
 }
@@ -312,17 +320,23 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    margin: 2rem auto;
+    margin: 0.3rem auto 2rem auto; /* Cambia el margen superior de 2rem a 0.5rem */
     max-width: 1200px;
     padding: 0 1rem;
 }
 
-.serveis_1, .serveis_2 {
+.serveis_1,
+.serveis_2 {
     display: contents;
 }
 
-.obres, .reformes, .restauracions_rehabilitacions,
-.microciment, .lloguerMaquinaria, .projectesMida, .servei-item {
+.obres,
+.reformes,
+.restauracions_rehabilitacions,
+.microciment,
+.lloguerMaquinaria,
+.projectesMida,
+.servei-item {
     background-color: #fff;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -330,13 +344,20 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.obres:hover, .reformes:hover, .restauracions_rehabilitacions:hover,
-.microciment:hover, .lloguerMaquinaria:hover, .projectesMida:hover, .servei-item:hover {
+.obres:hover,
+.reformes:hover,
+.restauracions_rehabilitacions:hover,
+.microciment:hover,
+.lloguerMaquinaria:hover,
+.projectesMida:hover,
+.servei-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-.divServeis img, .serveis_1 img, .serveis_2 img {
+.divServeis img,
+.serveis_1 img,
+.serveis_2 img {
     height: 16rem;
     width: 100%;
     object-fit: cover;
@@ -344,14 +365,18 @@ body {
     margin-bottom: 1rem;
 }
 
-.divServeis h3, .serveis_1 h3, .serveis_2 h3 {
+.divServeis h3,
+.serveis_1 h3,
+.serveis_2 h3 {
     text-align: center;
     margin: 1rem 0;
     color: #333;
     font-size: 1.3rem;
 }
 
-.divServeis p, .serveis_1 p, .serveis_2 p {
+.divServeis p,
+.serveis_1 p,
+.serveis_2 p {
     text-align: justify;
     line-height: 1.6;
     color: #666;
@@ -524,7 +549,7 @@ body {
     color: #333;
 }
 
-.divContacte > p {
+.divContacte>p {
     text-align: center;
     color: #666;
     font-size: 1.1rem;
@@ -539,7 +564,8 @@ body {
     margin: 0 auto;
 }
 
-.contacte-info h2, .contacte-form h2 {
+.contacte-info h2,
+.contacte-form h2 {
     color: #333;
     margin-bottom: 2rem;
     font-size: 1.5rem;
@@ -777,13 +803,23 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    .telCorreu, .xarxes {
+
+    .telCorreu,
+    .xarxes {
         gap: 1rem;
         font-size: 0.69rem;
     }
+
     .menu-toggle {
         display: flex;
     }
+
+ .divSlogan .demana_pressupost {
+        align-self: center;
+          margin-top: 2.5rem; /* espacio extra por encima del botón */
+    }
+
+
     .nav-menu {
         position: fixed;
         top: 0;
@@ -797,31 +833,47 @@ body {
         transition: right 0.3s ease;
         z-index: 1000;
     }
+
     .nav-menu.mobile-open {
         right: 0;
     }
+
     .divSlogan {
         min-height: 24rem;
         padding: 2.5rem 1.25rem;
         gap: 0.9rem;
     }
+
     .divSlogan .text-sobre-imatge_1 {
         font-size: clamp(1.8rem, 6vw, 2.5rem);
         line-height: 1.2;
     }
+
     .divSlogan .text-sobre-imatge_2 {
         font-size: clamp(1rem, 4vw, 1.3rem);
         line-height: 1.45;
     }
+
     .divEmpresa {
         flex-direction: column;
     }
-    .divEmpresaImg, .divEmpresaText {
+
+    .divEmpresaImg,
+    .divEmpresaText {
         width: 100%;
     }
+
     .contacte-container {
         grid-template-columns: 1fr;
     }
+
+    .titolServeis {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -830,12 +882,15 @@ body {
         padding: 2rem 1rem;
         gap: 0.8rem;
     }
+
     .divSlogan .text-sobre-imatge_1 {
         font-size: 1.8rem;
     }
+
     .divSlogan .text-sobre-imatge_2 {
         font-size: 1rem;
     }
+
     .demana_pressupost button {
         font-size: 0.95rem;
         padding: 0.8rem 1.2rem;
@@ -851,6 +906,7 @@ a:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
