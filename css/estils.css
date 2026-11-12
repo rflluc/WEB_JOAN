@@ -779,7 +779,7 @@ body {
     }
     .telCorreu, .xarxes {
         gap: 1rem;
-        font-size: 0.8rem;
+        font-size: 0.69rem;
     }
     .menu-toggle {
         display: flex;
