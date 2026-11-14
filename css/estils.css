@@ -259,70 +259,31 @@ body {
     transform: translateY(-3px);
 }
 
-/********** Promoció **********/
-.promocio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1rem;
-    background-color: transparent;
-}
-
-.promocio img {
-    height: 12rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.promocio p {
-    color: #898989;
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0 1rem;
-    text-align: center;
-}
-
-.promocio h3 {
-    margin: 1rem;
-    text-align: center;
-}
-
-.experiencia,
-.qualitat,
-.pressupost {
-    height: auto;
-    min-height: 22rem;
-    width: 100%;
-    border-radius: 1rem;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-
 /********** Serveis **********/
-.titolServeis {
+.titolServeis,
+#sobre-nosaltres,
+.divImatges h1,
+.divContacte h1 {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem 0.5rem 1rem;
-    text-align: center;
     font-size: 2.5rem;
     color: #333;
 }
 
+.titolServeis,
+#sobre-nosaltres {
+    padding: 2rem 1rem 0.5rem 1rem;
+    text-align: left;
+}
+
 .divServeis {
     display: grid;
-  background-color: #f8f9fa;
+    background-color: #f8f9fa;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin: 0.3rem auto 2rem auto;
     max-width: 1200px;
-  padding:1rem 1rem 1rem 1rem;
+    padding: 1rem;
 }
 
 .serveis_1,
@@ -384,15 +345,6 @@ body {
 }
 
 /********** Sobre nosaltres **********/
-#sobre-nosaltres {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem 1rem 1rem;
-    text-align: left;
-    font-size: 2.5rem;
-    color: #333;
-}
-
 .divEmpresa {
     display: flex;
     align-items: center;
@@ -443,30 +395,31 @@ body {
 
 /********** Galeria **********/
 .divImatges {
-    padding: 0.2rem 1rem 3rem 1rem; /* Redueix l'espai superior per pujar-ho i apropar-ho */
-    text-align: center;
+    padding: 2rem 0 3rem 0;
     background-color: #f8f9fa;
+    text-align: left;
 }
 
-.divImatges h2 {
-    margin-bottom: 1rem;
-    color: #333;
+.divImatges h1 {
+    margin: 0 auto 1rem auto;
+    padding: 0 1rem;
 }
 
 .divImatges p {
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
     color: #666;
     font-size: 1.1rem;
-    margin-bottom: 3rem;
 }
 
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem auto;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 1rem;
 }
 
 .galeria-item {
@@ -520,24 +473,7 @@ body {
     font-size: 0.9rem;
 }
 
-.galeria-boton button {
-    background-color: #F37447;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.galeria-boton button:hover {
-    background-color: #d4622a;
-    transform: translateY(-2px);
-}
-
-/********** Contacte (Escriptori / General)  background-color: #f7f9fa;**********/
+/********** Contacte (Escriptori / General) **********/
 .divContacte {
     padding: 0.2rem 1rem 3rem 1rem;
     background-color: #e6eff5;
@@ -546,7 +482,6 @@ body {
 .divContacte h1 {
     text-align: center;
     margin-bottom: 1rem;
-    color: #333;
 }
 
 .divContacte > p {
@@ -564,7 +499,6 @@ body {
     margin: 0 auto;
 }
 
-/* Alineació correcta a l'esquerra per a PC */
 .contacte-info {
     text-align: left;
 }
@@ -575,7 +509,7 @@ body {
     margin-bottom: 2rem;
     font-size: 1.5rem;
     text-align: center;
-    padding:1rem 1rem 1rem 1rem;
+    padding: 1rem;
 }
 
 .contacte-item {
@@ -601,17 +535,30 @@ body {
     min-width: 24px;
 }
 
+.contacte-item > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100%;
+    text-align: left !important;
+}
+
 .contacte-item h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.2rem 0;
     color: #333;
     font-size: 1.1rem;
+    text-align: left !important;
+    width: 100%;
 }
 
 .contacte-item p {
     margin: 0;
     color: #666;
     line-height: 1.5;
-    text-align: left;
+    text-align: left !important;
+    width: 100%;
+    display: block;
 }
 
 .contacte-xarxes {
@@ -644,7 +591,7 @@ body {
 
 .contacte-form {
     background-color: #f8f9fa;
-    padding: 0.5rem 2rem 2rem 2rem; /* Dalt 1rem, dreta/baix/esquerra 2rem */
+    padding: 0.5rem 2rem 2rem 2rem;
     border-radius: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -832,11 +779,6 @@ body {
         display: flex;
     }
 
-    .divSlogan .demana_pressupost {
-        align-self: center;
-        margin-top: 1.5rem;
-    }
-
     .nav-menu {
         position: fixed;
         top: 0;
@@ -871,6 +813,16 @@ body {
         line-height: 1.45;
     }
 
+    .divSlogan .demana_pressupost {
+        align-self: center;
+        margin-top: 1.5rem;
+    }
+
+    .titolServeis {
+        font-size: 1.9rem;
+        text-align: center;
+    }
+
     .divEmpresa {
         flex-direction: column;
     }
@@ -880,13 +832,27 @@ body {
         width: 100%;
     }
 
-    .contacte-container {
-        grid-template-columns: 1fr;
-    }
-
-    .titolServeis {
+    .divImatges h1 {
         font-size: 1.9rem;
         text-align: center;
+    }
+
+    .divContacte {
+        padding: 1rem 1rem;
+    }
+
+    .divContacte h1 {
+        text-align: center;
+        margin-bottom: 0.1rem;
+    }
+
+    .divContacte > p {
+        margin-bottom: 0.8rem;
+    }
+
+    .contacte-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .contacte-form {
@@ -895,6 +861,15 @@ body {
 
     .form-group label {
         text-align: left;
+    }
+
+    .contacte-info h2, 
+    .contacte-form h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .contacte-item {
+        margin-bottom: 0.2rem;
     }
 }
 

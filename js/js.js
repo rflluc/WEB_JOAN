@@ -1,25 +1,25 @@
-// Construccions Rasquera - JavaScript Functions
+// Construccions Rasquera - Funcions de JavaScript
 
-// Configuración de contacto
+// Configuració de contacte
 const CONTACT_INFO = {
     phone: '676165524',
     email: 'construccionsrasquera@gmail.com',
     whatsapp: '676165524',
     facebook: 'https://www.facebook.com/profile.php?id=100005154678418',
-    address: 'Ulldecona, Terres de l\'Ebre'
+    address: "Ulldecona, Terres de l'Ebre"
 };
 
-// Funciones para redes sociales y contacto
+// Funcions per a xarxes socials i contacte
 function callPhone() {
     window.open(`tel:+34${CONTACT_INFO.phone}`, '_self');
 }
 
 function sendEmail() {
-    window.open(`mailto:${CONTACT_INFO.email}?subject=Consulta desde la web&body=Hola, m'agradaria sol·licitar informació sobre els seus serveis.`, '_blank');
+    window.open(`mailto:${CONTACT_INFO.email}?subject=Consulta des del web&body=Hola, m'agradaria sol·licitar informació sobre els seus serveis.`, '_blank');
 }
 
 function openWhatsApp() {
-    const message = encodeURIComponent('Hola! M\'agradaria sol·licitar informació sobre els seus serveis de construcció.');
+    const message = encodeURIComponent("Hola! M'agradaria sol·licitar informació sobre els seus serveis de construcció.");
     window.open(`https://wa.me/34${CONTACT_INFO.whatsapp}?text=${message}`, '_blank');
 }
 
@@ -27,14 +27,14 @@ function openFacebook() {
     window.open(CONTACT_INFO.facebook, '_blank');
 }
 
-// Función para el botón de presupuesto
+// Funció per al botó de pressupost
 function solicitarPresupuesto() {
     const emailSubject = encodeURIComponent('Sol·licitud de pressupost des del web');
     const emailBody = encodeURIComponent('Hola! Voldria demanar un pressupost sense compromís.');
     window.open(`mailto:${CONTACT_INFO.email}?subject=${emailSubject}&body=${emailBody}`, '_self');
 }
 
-// Función para enviar formulario de contacto
+// Funció per enviar el formulari de contacte
 function enviarFormulario(event) {
     event.preventDefault();
 
@@ -47,13 +47,13 @@ function enviarFormulario(event) {
     const servicio = formData.get('servicio');
     const mensaje = formData.get('mensaje');
 
-    // Validación básica
+    // Validació bàsica
     if (!nombre || !email || !mensaje) {
-        alert('Si us plau, omple tots els camps obligatoris.');
+        alert("Si us plau, omple tots els camps obligatoris.");
         return;
     }
 
-    // Crear mensaje para email
+    // Crear missatge per a correu electrònic
     const emailSubject = encodeURIComponent(`Nova consulta des del web - ${servicio}`);
     const emailBody = encodeURIComponent(`
 Hola,
@@ -72,15 +72,15 @@ Salutacions,
 ${nombre}
     `.trim());
 
-    // Abrir cliente de email
+    // Obrir el client de correu electrònic
     window.open(`mailto:${CONTACT_INFO.email}?subject=${emailSubject}&body=${emailBody}`, '_self');
 
-    // Mostrar mensaje de confirmación
-    alert('Gràcies per la teva consulta! S\'ha obert el teu client de correu electrònic.');
+    // Mostrar missatge de confirmació
+    alert("Gràcies per la teva consulta! S'ha obert el teu client de correu electrònic.");
     form.reset();
 }
 
-// Función para smooth scroll
+// Funció per al desplaçament suau (smooth scroll)
 function smoothScroll(targetId) {
     const target = document.getElementById(targetId);
     if (target) {
@@ -91,7 +91,7 @@ function smoothScroll(targetId) {
     }
 }
 
-// Animaciones al hacer scroll
+// Animacions en fer desplaçament (scroll)
 function animateOnScroll() {
     const elements = document.querySelectorAll('.servei-item, .obres, .reformes, .restauracions_rehabilitacions, .microciment, .lloguerMaquinaria, .projectesMida');
 
@@ -114,7 +114,7 @@ function animateOnScroll() {
     });
 }
 
-// Menu móvil toggle
+// Alternar menú mòbil
 function toggleMobileMenu() {
     const menu = document.querySelector('.nav-menu');
     const toggle = document.querySelector('.menu-toggle');
@@ -122,21 +122,10 @@ function toggleMobileMenu() {
     if (menu && toggle) {
         menu.classList.toggle('mobile-open');
         toggle.classList.toggle('active');
-
-        // Cerrar menú cuando se hace clic en un enlace
-        if (menu.classList.contains('mobile-open')) {
-            const links = menu.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.remove('mobile-open');
-                    toggle.classList.remove('active');
-                }, { once: true });
-            });
-        }
     }
 }
 
-// Cerrar menú móvil al hacer clic fuera de él
+// Tancar el menú mòbil en fer clic a fora
 document.addEventListener('click', function (event) {
     const menu = document.querySelector('.nav-menu');
     const toggle = document.querySelector('.menu-toggle');
@@ -150,85 +139,7 @@ document.addEventListener('click', function (event) {
     }
 });
 
-// Inicialización cuando se carga la página
-document.addEventListener('DOMContentLoaded', function () {
-    // Añadir event listeners a los iconos de redes sociales
-    const phoneIcons = document.querySelectorAll('.fa-square-phone');
-    const emailIcons = document.querySelectorAll('.fa-at');
-    const whatsappIcons = document.querySelectorAll('.fa-square-whatsapp');
-    const facebookIcons = document.querySelectorAll('.fa-square-facebook');
-
-    phoneIcons.forEach(icon => {
-        icon.style.cursor = 'pointer';
-        icon.addEventListener('click', callPhone);
-    });
-
-    emailIcons.forEach(icon => {
-        icon.style.cursor = 'pointer';
-        icon.addEventListener('click', sendEmail);
-    });
-
-    whatsappIcons.forEach(icon => {
-        icon.style.cursor = 'pointer';
-        icon.addEventListener('click', openWhatsApp);
-    });
-
-    facebookIcons.forEach(icon => {
-        icon.style.cursor = 'pointer';
-        icon.addEventListener('click', openFacebook);
-    });
-
-    // Añadir funcionalidad al botón de presupuesto
-    const presupuestoBtn = document.querySelector('.demana_pressupost button');
-    if (presupuestoBtn) {
-        presupuestoBtn.addEventListener('click', solicitarPresupuesto);
-    }
-
-    // Inicializar animaciones
-    animateOnScroll();
-
-    // Añadir smooth scroll a los enlaces de navegación
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                smoothScroll(href.substring(1));
-
-                // Cerrar menú móvil después de hacer clic en un enlace
-                const menu = document.querySelector('.nav-menu');
-                const toggle = document.querySelector('.menu-toggle');
-                if (menu && toggle && menu.classList.contains('mobile-open')) {
-                    menu.classList.remove('mobile-open');
-                    toggle.classList.remove('active');
-                }
-            }
-        });
-    });
-
-    // Inicializar formulario de contacto si existe
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', enviarFormulario);
-    }
-});
-
-// Función para mostrar más información de servicios
-function mostrarMasInfo(servicio) {
-    const info = {
-        'obra-nova': 'Construcción de viviendas unifamiliares, locales comerciales y edificios. Proyectos llave en mano con los mejores materiales.',
-        'reformes': 'Reformas integrales y parciales. Cocinas, baños, distribución de espacios, mejora de eficiencia energética.',
-        'restauracions': 'Especialistas en rehabilitación de edificios antiguos, estructuras históricas y mejora de seguridad.',
-        'microciment': 'Aplicación de microcemento en suelos, paredes y techos. Acabados modernos y duraderos.',
-        'lloguer': 'Alquiler de maquinaria especializada para construcción. Equipos profesionales y mantenimiento incluido.',
-        'projectes': 'Proyectos personalizados desde la planificación hasta la entrega. Asesoramiento técnico completo.'
-    };
-
-    alert(info[servicio] || 'Información no disponible');
-}
-
-// Efecto parallax suave para el hero
+// Efecte parallax suau per a la secció principal (hero)
 function initParallax() {
     const hero = document.querySelector('.divSlogan img');
     if (hero) {
@@ -240,5 +151,75 @@ function initParallax() {
     }
 }
 
-// Llamar a initParallax después de cargar la página
-document.addEventListener('DOMContentLoaded', initParallax);
+// Inicialització unificada quan es carrega la pàgina
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Afegir escoltadors d'esdeveniments a les icones de xarxes socials i contacte
+    document.querySelectorAll('.fa-square-phone').forEach(icon => {
+        icon.style.cursor = 'pointer';
+        icon.addEventListener('click', callPhone);
+    });
+
+    document.querySelectorAll('.fa-at').forEach(icon => {
+        icon.style.cursor = 'pointer';
+        icon.addEventListener('click', sendEmail);
+    });
+
+    document.querySelectorAll('.fa-square-whatsapp').forEach(icon => {
+        icon.style.cursor = 'pointer';
+        icon.addEventListener('click', openWhatsApp);
+    });
+
+    document.querySelectorAll('.fa-square-facebook').forEach(icon => {
+        icon.style.cursor = 'pointer';
+        icon.addEventListener('click', openFacebook);
+    });
+
+    // 2. Funcionalitat al botó de pressupost
+    const presupuestoBtn = document.querySelector('.demana_pressupost button');
+    if (presupuestoBtn) {
+        presupuestoBtn.addEventListener('click', solicitarPresupuesto);
+    }
+
+    // 3. Inicialitzar animacions i parallax
+    animateOnScroll();
+    initParallax();
+
+    // 4. Desplaçament suau i tancament automàtic del menú mòbil als enllaços de navegació
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                smoothScroll(href.substring(1));
+
+                const menu = document.querySelector('.nav-menu');
+                const toggle = document.querySelector('.menu-toggle');
+                if (menu && toggle && menu.classList.contains('mobile-open')) {
+                    menu.classList.remove('mobile-open');
+                    toggle.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    // 5. Inicialitzar el formulari de contacte si existeix
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', enviarFormulario);
+    }
+});
+
+// Funció per mostrar més informació dels serveis
+function mostrarMasInfo(servicio) {
+    const info = {
+        'obra-nova': "Construcció d'habitatges unifamiliars, locals comercials i edificis. Projectes clau en mà amb els millors materials.",
+        'reformes': "Reformes integrals i parcials. Cuines, banys, distribució d'espais, millora de l'eficiència energètica.",
+        'restauracions': "Especialistes en rehabilitació d'edificis antics, estructures històriques i millora de la seguretat.",
+        'microciment': "Aplicació de microciment en terres, parets i sostres. Acabats moderns i duradors.",
+        'lloguer': "Lloguer de maquinària especialitzada per a la construcció. Equips professionals i manteniment inclòs.",
+        'projectes': "Projectes personalitzats des de la planificació fins a l'entrega. Assessorament tècnic complet."
+    };
+
+    alert(info[servicio] || 'Informació no disponible');
+}
