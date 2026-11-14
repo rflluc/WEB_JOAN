@@ -317,11 +317,12 @@ body {
 
 .divServeis {
     display: grid;
+  background-color: #f8f9fa;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin: 0.3rem auto 2rem auto;
     max-width: 1200px;
-    padding: 0 1rem;
+  padding:1rem 1rem 1rem 1rem;
 }
 
 .serveis_1,
@@ -442,12 +443,12 @@ body {
 
 /********** Galeria **********/
 .divImatges {
-    padding: 3rem 1rem;
+    padding: 0.2rem 1rem 3rem 1rem; /* Redueix l'espai superior per pujar-ho i apropar-ho */
     text-align: center;
     background-color: #f8f9fa;
 }
 
-.divImatges h1 {
+.divImatges h2 {
     margin-bottom: 1rem;
     color: #333;
 }
@@ -536,10 +537,10 @@ body {
     transform: translateY(-2px);
 }
 
-/********** Contacte **********/
+/********** Contacte (Escriptori / General)  background-color: #f7f9fa;**********/
 .divContacte {
-    padding: 3rem 1rem;
-    background-color: #fff;
+    padding: 0.2rem 1rem 3rem 1rem;
+    background-color: #e6eff5;
 }
 
 .divContacte h1 {
@@ -548,7 +549,7 @@ body {
     color: #333;
 }
 
-.divContacte>p {
+.divContacte > p {
     text-align: center;
     color: #666;
     font-size: 1.1rem;
@@ -563,16 +564,25 @@ body {
     margin: 0 auto;
 }
 
+/* Alineació correcta a l'esquerra per a PC */
+.contacte-info {
+    text-align: left;
+}
+
 .contacte-info h2,
 .contacte-form h2 {
     color: #333;
     margin-bottom: 2rem;
     font-size: 1.5rem;
+    text-align: center;
+    padding:1rem 1rem 1rem 1rem;
 }
 
 .contacte-item {
     display: flex;
     align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
     gap: 1rem;
     margin-bottom: 2rem;
     padding: 1rem;
@@ -581,7 +591,7 @@ body {
 }
 
 .contacte-item:hover {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .contacte-item i {
@@ -601,10 +611,12 @@ body {
     margin: 0;
     color: #666;
     line-height: 1.5;
+    text-align: left;
 }
 
 .contacte-xarxes {
     margin-top: 2rem;
+    text-align: left;
 }
 
 .contacte-xarxes h3 {
@@ -615,6 +627,7 @@ body {
 .xarxes-icons {
     display: flex;
     gap: 1rem;
+    justify-content: flex-start;
 }
 
 .xarxes-icons i {
@@ -631,9 +644,10 @@ body {
 
 .contacte-form {
     background-color: #f8f9fa;
-    padding: 2rem;
+    padding: 0.5rem 2rem 2rem 2rem; /* Dalt 1rem, dreta/baix/esquerra 2rem */
     border-radius: 1rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .form-group {
@@ -645,6 +659,7 @@ body {
     margin-bottom: 0.5rem;
     color: #333;
     font-weight: 500;
+    text-align: left;
 }
 
 .form-group input,
@@ -810,7 +825,7 @@ body {
 
     .xarxes {
         gap: 1.5rem;
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
     }
 
     .menu-toggle {
@@ -873,6 +888,14 @@ body {
         font-size: 1.9rem;
         text-align: center;
     }
+
+    .contacte-form {
+        text-align: left;
+    }
+
+    .form-group label {
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -897,6 +920,22 @@ body {
 
     .contacte-item p {
         font-size: 0.82rem;
+    }
+
+    .contacte-info {
+        text-align: left;
+    }
+
+    .contacte-item {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1rem 0;
+    }
+
+    #sobre-nosaltres {
+        text-align: center;
+        font-size: 1.9rem;
     }
 }
 
